@@ -1,3 +1,12 @@
+kcemu (0.5.1+dfsg-2) unstable; urgency=low
+
+  * Fix FTBFS on ports kfreebsd-i386, kfreebsd-amd64
+    and hurd-i386 (Closes: #592978)
+  * debian/control: bump standards version
+    to 3.9.1 (no changes needed)
+
+ -- Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Sun, 15 Aug 2010 21:08:28 +0200
+
 kcemu (0.5.1+dfsg-1) unstable; urgency=low
 
   * Initial release. (Closes: #538914)
