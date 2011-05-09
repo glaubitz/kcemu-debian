@@ -1,0 +1,27 @@
+#
+# $Id: TODO,v 1.9 2002/10/31 16:39:53 torsten_paul Exp $
+#
+
+- fix key repeat with gtk-2.2
+- fix .TAP import/export for files with non-linear block
+  numbering (e.g. os-save)
+- fix kc2wav -> wav2kc for z9001-mc programs
+- fix timing bug when loading digger by double click in the
+  tape window and starting the program before the tape
+  loader has timed out
+- fix interrupt handling, the hardware daisy chain is not
+  honored correctly which breaks some programs (e.g. PHARAO)
+- fix programs using SPRITE-MC
+  (by Dr. H. Gutzer/ S. Wendt, Funkamateur 3/90)
+- fix fast tape loading (doesn't switch bank 8 from IRM to RAM)
+- forward reset/power on signals to modules
+- convert debugging code in pio.cc to libdbg
+- improve sound output
+- expand environment variables in .kcemurc
+- extend the configuration dialog and save the changed values
+- don't use tempnam() in ModuleV24::socket_server():
+- don't use inputstream.getline() with fixed buffer
+- transparently handle gzipped files
+- fix do_dump() in kctape.cc to actually use the specified
+  output file
+- fix method names in ModuleInterface (e.g. reset() -> module_reset())

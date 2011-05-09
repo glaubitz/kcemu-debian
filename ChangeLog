@@ -1,0 +1,1513 @@
+2010-01-08  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* config/gettext.m4: New file, from gettext-0.17.
+	* config/iconv.m4: New file, from gettext-0.17.
+	* config/lib-ld.m4: New file, from gettext-0.17.
+	* config/lib-link.m4: New file, from gettext-0.17.
+	* config/lib-prefix.m4: New file, from gettext-0.17.
+	* config/nls.m4: New file, from gettext-0.17.
+	* config/po.m4: New file, from gettext-0.17.
+	* config/progtest.m4: New file, from gettext-0.17.
+	* config/codeset.m4: New file, from gettext-0.17.
+	* config/glibc2.m4: New file, from gettext-0.17.
+	* config/glibc21.m4: New file, from gettext-0.17.
+	* config/intdiv0.m4: New file, from gettext-0.17.
+	* config/intl.m4: New file, from gettext-0.17.
+	* config/intldir.m4: New file, from gettext-0.17.
+	* config/intlmacosx.m4: New file, from gettext-0.17.
+	* config/intmax.m4: New file, from gettext-0.17.
+	* config/inttypes_h.m4: New file, from gettext-0.17.
+	* config/inttypes-pri.m4: New file, from gettext-0.17.
+	* config/lcmessage.m4: New file, from gettext-0.17.
+	* config/lock.m4: New file, from gettext-0.17.
+	* config/longlong.m4: New file, from gettext-0.17.
+	* config/printf-posix.m4: New file, from gettext-0.17.
+	* config/size_max.m4: New file, from gettext-0.17.
+	* config/stdint_h.m4: New file, from gettext-0.17.
+	* config/uintmax_t.m4: New file, from gettext-0.17.
+	* config/visibility.m4: New file, from gettext-0.17.
+	* config/wchar_t.m4: New file, from gettext-0.17.
+	* config/wint_t.m4: New file, from gettext-0.17.
+	* config/xsize.m4: New file, from gettext-0.17.
+
+2006-11-17  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add intl, m4, po.
+	(EXTRA_DIST): Add m4/ChangeLog.
+	* configure.in (AC_OUTPUT): Add intl/Makefile, po/Makefile.in,
+	Remove command that created po/Makefile.
+
+2005-05-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_rom1.cc: round module size up to 4k boundary and
+	initialize content with 0xff
+
+	* include/kc/module.h, src/kc/module.cc, src/kc/mod_list.cc: added
+	the possibility to show an error text when a module can not be
+	inserted (e.g. if it's only possible to have exactly one module of
+	a specific type)
+
+	* src/kc/mod_js.cc: added configuration for joystick device and
+	better auto probing for some default joystick devices; currently
+	always the first joystick is selected.
+
+	* src/kc/keyb1.cc: changed kc85/1 keyboard handling with respect
+	to shifted keys; it should be possible now to enter characters
+	that are shifted in the pc layout but not shifted in the kc layout
+
+2005-05-14  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/gide.h, src/kc/gide.cc: GIDE support is now working
+	to the extend that it's possible to boot from hard disk. current
+	implementation has two fixed hard disks, master drive is a Seagate
+	ST-157A (42MB) and slave drive is a MyZ80 compatible hard disk.
+	not yet solved is the problem of initializing the directory area
+	of the hard disk file. without this only the first sector of the
+	directory is usable.
+
+2005-05-01  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/memory3.cc: reinitialize memory layout on reset
+
+	* src/kc/mod_ram.cc: fix configuration changes; address changes
+	were only honoured when the active flag was changed too
+
+	* src/kc/mod_disk.cc: fix initialization
+
+2005-04-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/pio3.cc: fix meaning of the internal pio ports (according
+	to schematics, due to lack of system handbook)
+
+	* src/kc/pio.cc: handle byte input mode (which is the PIO default)
+
+2005-04-24  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/z80core2/z80io.h: fixed definition of I/O functions
+	to allow usage 16-bit port address; this is neccessary for the
+	GIDE/RTC input
+
+2005-04-23  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc_cmd.cc: changed the "format a track" to work with the
+	caosdisk command
+
+	* include/kc/daisy.h, src/kc/daisy.cc: separated interrupt daisy
+	chain handling so it can be used from module code
+
+	* include/kc/mod_dio.h, src/kc/mod_dio.cc, include/kc/ctc_dio.h,
+	include/kc/pio_dio.h, src/kc/ctc_dio.cc, src/kc/pio_dio.cc: added
+	digital in/out module (M001)
+	
+2004-08-14  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/disk.h, src/kc/disk.cc: added method to create new
+	empty disk files (always using AnaDisk Dump format with format
+	5x1024x2)
+
+	* src/kc/kc.cc: do some guessing for data and locale directory
+
+	* src/kc/keyb3.cc: ignore "AltGR" key; fix for keys that are
+	shifted on PC keyboard but not on KC keyboard (e.g. ':'); this
+	might not work correctly on keyboard layout different from german.
+
+	* src/ui/gtk/ui_gtk.cc (key_press_release): "AltGr" key returns
+	GDK_ISO_Level3_Shift.
+
+	* src/z80core2/Z80.c: added Z80_ExecuteSingle() method and made
+	InitTables() public with the new name Z80_InitTables().
+
+2004-06-11  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/keyb3k.h: changed the code for the ENTER key from
+	7fh to 7eh; needed for CAOS 4.4
+
+	* src/z80core/CodesXCB.h: implemented undocumented opcodes
+	SET 7,(IX+4),A and RES 7,(IX+4),A that are used by CAOS 4.3 and
+	above
+
+	* src/kc/ports4.cc: force initial change for all bits
+
+2004-06-10  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/mod_4m.h, src/kc/mod_4m.cc: added 4MB RAM module
+	(M035x4, logically 4 1MB modules in one slot)
+
+	* include/kc/mod_1m.h, src/kc/mod_1m.cc: added module 1MB
+	segmented RAM
+
+	* include/kc/mod_512k.h, src/kc/mod_512k.cc: added module 512k
+	segmented RAM
+
+	* include/kc/mod_256k.h, src/kc/mod_256k.cc: added module 256k
+	segmented RAM
+
+	* include/kc/mod_128k.h, src/kc/mod_128k.cc: added module 128k
+	segmented RAM
+
+	* include/kc/mod_segm.h, src/kc/mod_segm.cc: base class for
+	segmented RAM modules (kc85/4)
+
+	* src/kc/module.cc: pass all memory I/O calls to the module
+	interface not only the calls aligned at module addresses (with
+	((addr >> 8) & 3) == 0); this is needed for the M035x4 4MB module
+	that logically contains 4 1MB modules at all 4 module port
+	addresses of one slot
+
+	* src/kc/memory4.cc: modified reset routine to also initialize
+	internal state variables
+
+	* src/kc/memory4.cc: fixed memory segment handling problem for RAM8
+
+	* src/kc/mod_ram.cc: grmpf, module memory size was not 16k as it
+	should be but only 8k
+
+2004-03-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/pio.cc: don't ignore callback return value in bit I/O mode
+
+2004-03-17  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* switched to automake-1.8
+
+2004-02-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc: fix keyboard handling resurrecting the key
+	accelerator in the menu bar; full support for main menu access by
+	keyboard
+
+2004-01-31  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/basicrun.h: added basic run routine for starting
+	basic programs from both system and basic mode
+
+2004-01-17  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc: added menu entry to enable/disable
+	display effects for scaled screen
+
+2004-01-11  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/mod_192k.h, src/kc/mod_192k.cc,
+	include/kc/mod_4131.h, src/kc/mod_4131.cc, include/kc/mod_64k.h,
+	src/kc/mod_64k.cc, include/kc/mod_cpm.h, src/kc/mod_cpm.cc,
+	include/kc/mod_fdc.h, src/kc/mod_fdc.cc, include/kc/mod_gdc.h,
+	src/kc/mod_gdc.cc, include/kc/mod_js.h, src/kc/mod_js.cc,
+	include/kc/mod_r64.h, src/kc/mod_r64.cc, include/kc/mod_ram.h,
+	src/kc/mod_ram.cc, include/kc/mod_ram1.h, src/kc/mod_ram1.cc,
+	include/kc/mod_ram8.h, src/kc/mod_ram8.cc, include/kc/mod_ramf.h,
+	src/kc/mod_ramf.cc, include/kc/mod_rom.h, src/kc/mod_rom.cc,
+	include/kc/mod_rom1.h, src/kc/mod_rom1.cc, include/kc/mod_rtc.h,
+	src/kc/mod_rtc.cc: implement reset() method
+	
+	* include/kc/module.h, src/kc/module.cc: added reset() method to
+	forward reset/power on event; made scratch_mem() static
+
+	* include/kc/kc.h, src/kc/kc.cc, src/ui/gtk/ui_gtk.cc: added
+	command line switch and config file entry to enable/disable
+	display effects for scaled screen
+
+2004-01-10  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc.cc, src/kc/fdc_cmd.cc, src/ui/gtk/debug.cc,
+	src/ui/gtk/copying.cc, src/kc/memory3.cc, src/kc/memory7.cc,
+	src/kc/module.cc, src/kc/mod_list.cc, src/cmd/cmdargs.cc,
+	src/kc/cb_list.cc, src/ui/gtk/ui_gtk.cc, src/libtape/kct.cc: fix
+	memory leaks
+
+	* include/ui/generic/memaccess.h, src/ui/generic/memaccess.cc:
+	simple implementation of the kc 85/2, kc85/3 display effect caused
+	by access to the screen memory
+
+	* src/kc/memory2.cc, src/kc/memory3.cc: call user interface when
+	reading or writing from/to IRM
+
+	* ROM/m006.rom, src/kc/mod_list.cc: fixed rom image, this module
+	is actually 16k and includes a new system rom!
+
+	* src/kc/memory2.cc, src/kc/pio2.cc: enables memory bank switching
+
+2003-12-24  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc: replaced deprecated gtk_window_set_policy()
+	with gtk_window_set_resizable()
+
+2003-11-23  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc (do_play_basicode): added play routine for
+	basicode files
+
+	* include/libtape/kct.h: support for basicode files
+
+	* src/fileio/load_BASICODE.c (loader_BASICODE_load): added loader
+	for basicode files (in ASCII format)
+
+2003-11-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.7
+
+	* src/fileio/load_SSS.c (loader_SSS_check): relaxed the file checking again;
+	now checks if (basic_length_specified_in_file + 129) < size_of_file; previous
+	value was +127 which was too small for some file floating around
+
+	* src/libtape/kct.cc (list): change stream modifiers to be gcc3 compatible
+
+2003-11-16  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/tape.cc (init): enabled combo box for tape files; now
+	only files that are readable will be included in the combo box
+
+2003-10-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/memory6.cc (Memory6), src/ui/gtk/tape.cc (init),
+	src/ui/gtk/disk.cc (init), src/ui/gtk/ui_gtk.cc (property_change):
+	fix memory leaks
+
+2003-10-12  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/disk.cc, src/ui/gtk/copying.cc: fixed memory
+	allocation problems pointed out by valgrind
+
+	* include/kc/keyb3k.h: added BRK, STOP, CLR and _ keys for use
+	with the keyboard window
+
+	* src/kc/keyb3.cc: fixes for shift handling
+
+2003-10-05  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* redirect output streams and pass -mwindows to gcc to prevent
+	the dos box from popping up under windows
+
+	* completed kc 85 keyboard window
+
+	* added generation of windows icon files
+
+	* generate KCemuSetup.iss from KCemuSetup.iss.in
+
+2003-10-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* added KCemuSetup.iss for use with Inno Setup (Windows
+	Setup compiler); contributed by Alexander SchÃ¶n
+
+	* src/kc/mod_rom.cc, src/kc/mod_rom1.cc, src/kc/mod_192k.cc:
+	fix open() mode to use binary I/O
+
+	* src/sys/mingw/sys/sys_gettimeofday.c: fix microsecond
+	return value to actually return microseconds instead of
+	milliseconds
+
+	* src/sys/mingw/sys/sys_usleep.c: implemented using Sleep()
+	from the Win32 API
+
+2003-07-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/debug.cc: fix font usage in debug window
+
+	* include/ui/copying.h: removed
+
+	* src/kc/disk.cc (detach): remove duplicated code
+
+	* src/kc/kc.cc: use gettext for help texts (before call to 
+	bind_textdomain_codeset() in ui initialization); splitted license
+	string for commandline and ui usage; added functions to return
+	translated license strings: kc_get_license(), kc_get_warranty(),
+	kc_get_license_trailer()
+
+	* src/ui/gtk/ui_gtk.cc (init): call bind_textdomain_codeset() to
+	force UTF-8 encoding which is required by the new GTK
+
+	* po/de.po: changed encoding to UTF-8
+
+2003-06-29  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* integrated emulation of the Polycomputer 880 from development
+	branch into trunk
+
+2003-06-22  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/ctc.cc (c_out): added a fixed offset for callback timing
+	added for the poly880 emulation; without offset the CTC caused NMI
+	is triggered one opcode too early
+
+2003-06-18  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/pio.cc (out_CTRL): fix debug output
+
+2003-06-17  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/keyb1.cc: removed #define KEYB_DEBUG and changed debug
+	code to use libdbg
+	(keyPressed): ignore key press events for keys that are already
+	pressed (e.g. generated by the GTK keyboard code)
+
+2003-06-16  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* configure.in: manually disable AM_PATH_GTK_2_0 check if
+	gtk-check is disabled and use GTK_CFLAGS/GTK_LIBS environment
+	variables; added command line flag --enable-ms-bitfields to
+	enable/disable check for -mms-bitfields gcc flag (MinGW only)
+	
+2003-06-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* configure.in: replace MD5Init with
+	FLAC__file_decoder_process_metadata in check for libFLAC; this
+	function is present in the 1.0.x FLAC library but not in 1.1.x
+
+	* include/ui/gtk/tape.h: removed unused enum
+
+2003-06-13  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/ui/gtk/tape.h: #undef TAPE_REWIND -- it's defined under
+	MinGW; need to check where this comes from
+
+	* src/ui/gtk/ui_gtk.cc: removed #include <X11/Xatom.h> and
+	#include <gdk/gdkx.h>
+	(key_press_release): replaced XKeysymToKeycode() with event->hardware_keycode
+
+2003-06-12  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* configure.in: add AC_DEFINE for USE_INCLUDED_GETOPT
+
+	* src/libtape/kctape.cc (open_output): open file in binary mode;
+	check which getopt.h to include
+
+	* src/ui/gtk/ui_gtk.cc: replaced usleep() with g_usleep()
+
+	* include/sys/sysdep.h, src/sys/linux/sys_gettimeofday.c,
+	src/sys/beos/sys_gettimeofday.c, src/sys/mingw/sys_gettimeofday.c:
+	added sys_gettimeofday() which is a wrapper for gettimeofday() for
+	linux and beos, the mingw function was provided by Alexander Schön
+
+	* src/ui/gtk/ui_gtk.cc: removed references to gettimeofday() and
+	introduced system dependend function sys_gettimeofday()
+
+2003-06-11  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/disk.cc: moved the command call "ui-disk-update-MSG" to
+	attach() and detach(); now initially attached disk images (via
+	command line or init file) are shown in the user interface;
+	allow attaching of disk images from DATADIR without path
+
+	* include/kc/keys.h: added KC_KEY_SPACE, KC_KEY_RESET and KC_KEY_NMI
+
+	* include/ui/gtk/keyboard.h, src/ui/gtk/keyboard.cc: complete
+	rewrite based on images for the keyboard display
+
+2003-06-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/gtkledline.c: removed unused code
+
+	* src/libdisk/disk.c: set passed reference to pointer to NULL on
+	failure in libdisk_open()
+
+2003-06-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* upgrade to GTK+-2.2.1
+
+	* src/ui/gtk/tape.cc, src/ui/gtk/ui_gtk0.cc, src/ui/gtk/ui_gtk1.cc,
+	src/ui/gtk/ui_gtk8.cc, src/ui/gtk/keyboard.cc: fix color specification; pango
+	doesn't like the form "rgb:00/a0/ff"
+
+	* src/ui/gtk/copying.cc: gtk_text_new() is only available if
+	GTK_ENABLE_BROKEN is defined :-( and this is obviously no joke;
+	removed the text widget and replaced it with two labels in a
+	scrolled window which works quite well; need to check font allocation
+	by libpango as it currently uses hardcoded fontfamily "Courier"
+
+	* src/ui/gtk/debug.cc: fixed compile problem with overloading do_goto();
+	can't use style->font anymore -- need new method to set font
+
+	* src/ui/gtk/disk.cc, src/ui/gtk/tape.cc: char * -> const gchar *
+
+	* src/ui/gtk/ui_gtk.cc, src/ui/gtk/disk.cc, src/ui/gtk/tape.cc,
+	src/ui/gtk/tapeadd.cc, src/ui/gtk/about.cc, src/ui/gtk/color.cc,
+	src/ui/gtk/module.cc, src/ui/gtk/keyboard.cc,
+	src/ui/gtk/copying.cc, src/ui/gtk/hedit.cc: GTK_WINDOW_DIALOG -> GTK_WINDOW_TOPLEVEL
+
+	* src/ui/gtk/ui_gtk.cc: removed usage of gdk_key_repeat_disable() and
+	gdk_key_repeat_restore(); both are not available in GTK-2.0
+
+	* src/ui/gtk/ui_gtk.cc: changed XA_STRING to GDK_TARGET_STRING
+
+	* src/ui/gtk/tape.cc: disabled combo box; signal handling is too buggy
+
+	* src/ui/gtk/about.cc: added KCemu logo
+
+2003-06-06  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/memory.h, src/kc/memory.cc: expose the reload_mem_ptr()
+	function for public access (needed by the 192k module)
+
+	* include/kc/mod_192k.h, src/kc/mod_192k.cc: first implementation
+	of the 192 KByte RAM/EPROM module for kc85/1; still needs some changes
+	to work for kc87 (ROMDI handling)
+
+2003-06-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_v24.cc: fix initialization
+
+2003-04-26  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/keyb*.cc: fixed keyboard reset
+
+	* include/kc/vis.h, src/kc/vis.cc, src/ui/generic/ui_9.cc: added
+	function to check char set changes so when loading a new charset
+	from disk the screen is updated correctly and not only after
+	redrawing characters
+
+	* src/kc/gdc.cc: added even more debug output
+
+	* include/kc/cb_list.h, src/kc/cb_list.cc, src/kc/z80.cc: added
+	function to remove queued callback requests
+
+	* src/kc/pio.cc: fixed callback handling (missing initialization
+	of callback return variable)
+
+	* src/fileio/load_TAPE.c: relaxed file type check, the filename is
+	not checked for valid chars anymore; this now allows loading of most
+	.KCC files
+
+2003-04-21  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/mod_js.h, src/kc/mod_js.cc: joystick module M008
+	for kc 85/2-4 using linux joystick interface
+
+	* src/kc/mod_list.cc: fix inclusion of the v24 (wrong #define);
+	added joystick module
+
+2003-04-18  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk9.cc, src/ui/sdl/ui_sdl9.cc: fix cpu timing
+	(clock frequency is 3,75MHz)
+
+	* src/ui/generic/ui_9.cc: fix display resolutions for screen
+	modes 3 and 5
+
+	* src/kc/vis.cc: implemented read access to char data (port 9ch);
+	fixes text output in graphics mode
+
+2003-04-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/generic/ui_8.cc: honour clear_cache flag
+
+	* src/ui/generic/ui_3.cc: honour clear_cache flag
+
+	* src/ui/generic/ui_0.cc: honour clear_cache flag in GDC update
+	function
+
+	* src/ui/gtk/ui_gtk8.cc: call generic_update() with clear_cache flag
+	
+	* src/ui/gtk/ui_gtk.cc: render bitmap when calling gtk_update()
+	with the full_update flag set; fixes display update problems when
+	changing the display scaling
+	
+2003-04-01  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* some changes to allow compilation in the MinGW/MSYS environment
+	
+	* include/ui/sdlmtk/*, src/ui/sdlmtk/*: small toolkit for a simple
+	libSDL based user interface
+	
+	* src/libaudio/load_oss.c: made optional, added check for
+	necessary headerfile to configure.in
+
+	* src/kc/kc.cc: added command line switch for showing a verbose
+	listing of available emulations
+
+	* src/kc/keyb0.cc: latch key value only at start of keyboard scan
+	to prevent missing recognition of the shift keys
+
+	* src/kc/mod_rtc.cc: use sys_localtime() to fetch time
+
+	* src/kc/rc.cc: load rc-file from current working directory too
+	(order is $HOME/.kcemurc, $cwd/.kcemurc, DATADIR/.kcemurc)
+
+	* src/kc/wav.cc: define M_PI if not already defined
+
+2003-03-27  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc, src/kc/mod_list.cc: added command line switch to
+	set/add modules at startup
+
+2003-03-26  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc, src/kc/mod_ramf.cc, src/kc/rc.cc: don't
+	use environment variable for home directory but overwritable
+	global variable kcemu_homedir; src/libdbg/dbg.cc will still use
+	the environment
+
+	* src/kc/kc.cc: added command line switches for fullscreen mode
+	and overwriting the home directory
+
+2003-03-23  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/sdl/ui_sdl.cc: hide cursor on key press and show it on
+	mouse move events
+
+	* src/sys/*/sys_localtime.c: added system dependend call to
+	retrieve the local time of the system (for the RTC module)
+
+	* src/kc/z80.cc: removed get_time()
+
+	* upgraded to automake 1.6, autoconf 2.57, gettext 0.10.40
+
+2003-03-12  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/generic/ui_0.cc: use get_char_rom() instead of the hard
+	coded char set from font0.h
+
+	* src/kc/memory*.[h,cc]: changed getIRM() to get_irm() and added
+	get_char_rom()
+
+2003-03-10  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/generic/ui_9.cc: change window size for hires modes
+	instead of crippling the characters to 4x8 pixels
+
+2003-03-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/gdc.h, src/kc/gdc.cc: added function to emulate the
+	vertical retrace bit of the control register -- needed by the
+	Z1013 CP/M to prevent the status line from flickering
+
+	* include/kc/mod_rtc.h, src/kc/mod_rtc.cc: minimal RTC support to
+	allow date/time display for the Z1013 CP/M; the values are read
+	directly from the system clock and setting the RTC is not yet
+	supported
+
+	* src/kc/mod_list.cc, include/ui/gtk/module.h,
+	src/ui/gtk/module.cc: let the Z1013 have 8 module slots
+
+	* src/kc/fdc_cmd.cc: return almost correct result values for
+	FORMAT_A_TRACK; sector number is automatically incremented but for
+	now the returned sector is the one when starting the command; set
+	data transfer flag because the FDC needs to receive the sector
+	information after the FORMAT_A_TRACK command execution started
+
+2003-03-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/gdc.h, src/kc/gdc.cc: support all four subscreens
+	that are possible in textmode; fixes the fancy scrolling routine
+	of the Z1013 CP/M which uses 3 subscreens -- two for screen
+	scrolling without the need to actually copy any data and one for
+	the status line
+
+2003-03-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/keyb0k.h: added 8x8 keyboard matrix for A2 system rom
+
+2003-02-26  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc.cc: splitted i/o interface into separate classes for
+	the different systems
+
+2003-02-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/pio.h: changed PIOCallbackInterface to allow return
+	values for the input callbacks
+
+2003-02-16  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/disk.cc: check if FDC is available
+
+	* src/kc/mod_4131.cc: added missing call to set_valid()
+
+	* src/libtape/kctape.cc: fix handling of readonly files
+
+	* src/libtape/kct.cc: fix file creation with gcc-3.2
+
+	* src/kc/mod_rom1.cc: call unregister_memory() after
+	unregister_romdi_handler() in destructor
+
+2003-02-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc.cc: added set_terminal_count() function; currently
+	used only by the KC87 emulation; terminal count doesn't clear the
+	result data
+
+2003-02-12  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc_cmd.cc: retract head to track 0 and set SEEK END; need
+	by CPM-Z9 boot routine
+
+	* src/kc/mod_cpm.cc: added missing call to set_valid()
+
+2003-02-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc: added autostart for BASIC programs in KC85/1 and
+	KC87 mode (BASIC must be initialized first!); autostart routine is
+	described in MP 3/89, page 86 ("Basic-Run im OS für die KC87-Familie")
+	
+2003-02-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/mod_ramf.h, src/kc/mod_ramf.cc: 256k ram floppy for
+	z1013; it's possible to use two modules of this type at the same
+	time, the first will get i/o port 98h, the second i/o port 58h;
+	initial content can be loaded from files in headersave format that
+	live in the directories ~/.z1013-ramfloppy_98 and
+	~/.z1013-ramfloppy_58 respectivly
+
+	* src/kc/memory.cc, src/kc/tape.cc: added hack to load z1013 files
+	(in headersave format)
+	
+	* src/fileio/load_HS.c: loader for z1013 files in headersave format
+
+	* src/kc/mod_list.cc: check if module insert is possible by
+	checking the valid flag that must be set by the clone constructor
+
+2003-02-01  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc: added variant kc87.20
+
+	* src/kc/tape.cc: add files with unknown type as KCT_TYPE_BIN, use
+	real filename otherwise not just "new file"
+
+	* src/libtape/kctape.cc: use new type KCT_TYPE_BIN when adding raw
+	files (via switch -A)
+	
+	* include/libtape/kct.h, src/libtape/kct.cc: added type
+	KCT_TYPE_BIN that will be used for the new emulated systems until
+	the tape i/o really supports those systems
+
+2003-01-29  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* added first pieces of a z1013 emulation; base system is working
+	but there is no tape emulation yet
+
+2003-01-26  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_list.cc: added plotter module for kc85/1 (the ROM
+	is identical with the internal ROM BASIC of the KC87.21)
+
+	* src/kc/kc.cc: added command line flag to attach a disk file on
+	startup
+
+2003-01-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libtape/kct.cc: fix file creation bug caused by the changes
+	for gcc-3.x; now uses access() to check for exising files
+
+2003-01-19  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/mod_cpm.h, src/kc/mod_cpm.cc: emulation of the floppy
+	module for the KC87 CP/M system CPM-Z9
+	
+	* include/kc/mod_r64.h, src/kc/mod_r64.cc: emulation of the 64k
+	RAM module required by the KC87 CP/M system CPM-Z9
+
+	* include/kc/mod_4131.h, src/kc/mod_4131.cc: started emulation of
+	the plotter XY4131
+
+	* src/fileio/load_BIN.c: file loader for tape files with 130 byte
+	block size (as written by the kc tape routines including block
+	number and checksum)
+	
+	* src/kc/mod_rom1.cc: fix memory region registration to be read
+	only; now it's really a rom module
+
+	* src/kc/memory1.cc, src/kc/memory7.cc: changed priority of IRM
+	memory from 128 to 1
+
+	* include/kc/memory7.h, src/kc/memory7.cc: added function to
+	switch of the internal basic and system roms (ROMDI)
+
+	* include/kc/memory1.h, src/kc/memory1.cc: added function to
+	switch of the internal system rom (ROMDI)
+
+	* include/kc/romdi.h: definitions for the ROMDI handling
+
+	* include/kc/module.h: renamed in() and out() to m_in() and
+	m_out() to allow usage of both ModuleInterface and PortInterface
+
+2003-01-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_list.cc: insert Floppy Disk Basis Module only
+	when emulating kc85/2-4
+
+2003-01-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc: add extra delay between data blocks if the file
+	type is KCT_TYPE_LIST; this is needed to give the basic
+	interpreter enough time to tokenize the lines while reading from
+	the tape with LOAD#1"FILENAME"
+
+	* include/fileio/load.h, include/libtape/kct.h: renamed the file
+	type MINTEX to DATA because the signature 0xd4, 0xd4, 0xd4 is
+	produced by the data save command CSAVE*"FILENAME";ARRAYNAME,
+	added file type LIST with signature 0xd5, 0xd5, 0xd5 that is
+	generated by LIST#1"FILENAME"
+	
+2002-12-22  Torsten Paul  <Torsten.Paul@gmx.de>
+
+       * src/kc/memory9.cc: initialize memory configuration on system reset
+
+       * src/kc/gdc.cc: initialize chip emulation on system reset
+
+       * src/kc/vis.cc: initialize chip emulation on system reset
+
+2002-12-21  Torsten Paul  <Torsten.Paul@gmx.de>
+
+       * added a5105 systemdisk
+
+2002-12-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+       * src/kc/memory9.cc: implemented core dump function
+
+2002-12-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc: workaround for memstream problems in the
+	bic/a5105 functions
+
+	* src/kc/gdc.cc: fix typo in read-write-modify emulation for the
+	WDAT command
+
+	* src/ui/generic/ui_9.cc: fixed caching bug (value of the _dirty
+	array was ignored)
+
+	* include/kc/vis.h, src/kc/vis.cc, include/ui/generic/ui_9.h,
+	src/ui/generic/ui_9.cc: added emulation of screen border
+
+2002-12-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/kc.h, src/kc/kc.cc, src/kc/memory9.cc: added variant
+	'bic' and 'k1505' that emulate only the base device and variant
+	'a5105' that includes the emulation of the disk device
+
+2002-11-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libaudio/load_*.c: display version of the used sound
+	library if available
+	
+	* src/libaudio/load_als.c: audio loader for ALSA line input;
+	not enabled yet
+
+	* configure.in: added check for libsndfile 1.0.x
+
+	* added support for libsndfile 1.0.x which has a different
+	api compared with version 0.0.x
+	
+	* src/libdisk/tdtodump.c: simple program to convert TeleDisk
+	images to uncompressed disk dumps
+
+	* include/libdisk/teledisk.h, src/libdisk/teledisk.c,
+	src/libdisk/load_td0.c: added loader for disk images produced
+	by the Sydex TeleDisk program (only normal compression for now)
+
+2002-11-22  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/module.cc: show the toggle button for the color
+	expansion for all kc85/1 and kc87 variants but enable it only
+	for some of those
+
+	* src/kc/mod_list.cc: differentiate kc85/1 and kc87 variants with
+	and without the color expansion; this should move to a more
+	appropriate place
+
+2002-11-21  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc (do_play): tape now functional with the new
+	memstream; still needs some workarounds because of problems
+	with the memstream class
+
+2002-11-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* lots of compile fixes for g++-3.2; updated names of include files;
+	removed default parameter values from some functions in the *.cc
+	files; replaced the deprecated strstream
+	
+	* src/kc/kc.cc (set_kc_type): added the notion of computer
+	variants to allow to differentiate between e.g. the kc87.11 and
+	kc87.21 model
+
+2002-11-19  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_rom1.cc (ModuleROM1): added missing initialization;
+	fixes crash on exit
+
+	* src/libtape/kct.cc: using memstream now
+
+	* include/kc/memstream.h: new memory based input/output stream
+	working on a byte array; can't use istringstream to replace
+	istrstream because it truncates on '\0'
+
+2002-11-17  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* ROM/os____f0.87b, basic_c0.87b: dumped system and basic rom of
+	a kc87.21; both roms are different from the kc87.11
+	
+	* src/kc/memory1.cc (dumpCore): implemented coredump function
+
+	* src/kc/memory7.cc (dumpCore): implemented coredump function
+
+2002-11-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/memory1.cc (reset), src/kc/memory7.cc (reset): don't call
+	scratch_mem() for the first ram block at address 0000h this breaks
+	the initialization -- how this is working in the real machine is
+	quite obscure; fixes MAZOGS
+
+	* src/kc/ctc1.cc (irq_2): output pin of timer channel 2 is connected
+	to channel 3 trigger input pin; fixes system time
+
+2002-11-04  Torsten Paul  <Torsten.Paul@gmx.de>
+ 
+	* include/z80core/z80.h (LSB_FIRST): hardcode LSB_FIRST for
+	the z80 core; needs an endian check in configure
+
+	* src/ui/generic/ui_9.cc (generic_update_text): added display
+	cache for text mode
+
+	* src/ui/gtk/ui_gtk.cc: fixed the hack with hard coded dirty
+	buffer size
+
+	* src/ui/generic/ui_9.cc (generic_update): emulate text screen
+	modes 0,1,8,9; the modes with 80 chars per line are emulated
+	by an ugly hack that simply shrinks the character width
+
+	* src/kc/gdc.cc: startet to implement READ-MODIFY-WRITE memory
+	access using the mask register
+
+2002-11-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/cmd/dbg.cc: added command reload-debug-config to reload
+	the debug config
+
+	* include/libdbg/dbg.h, src/libdbg/dbg.cc: added function to
+	reload the config file while the application is running
+
+2002-11-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/generic/ui_9.cc (generic_update): added split screen
+	emulation for mixed mode
+
+2002-10-31  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.6
+
+2002-10-16  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/z80.cc: timer is not available for all computer types
+	so don't try to start it if it's not initialized
+
+2002-10-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/module.cc: made special entry for the kc85/1 color
+	expansion module as this is not a real module but an internal card
+
+	* src/kc/mod_list.cc (insert): allow the entry to be NULL; this
+	will remove a module that may be present in the given slot
+
+2002-10-06  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* added kc85/1 rom modules from www.sax.de/~zander: IDAS, BITEX,
+	EDAS, ZSID, R80 and ZM30; thanks to Ulrich Zander
+
+	* src/ui/generic/ui_1.cc: added emulation of the flash bit;
+	finally makes the cursor visible in kc87 mode
+
+	* include/kc/timer3.h, src/kc/timer3.cc: new Timer implementation
+	for kc85/2-4; this is a copy of the old timer.h/timer.cc
+
+	* include/kc/timer1.h, src/kc/timer1.cc: new Timer implementation
+	for kc85/1, kc87; this is needed to emulate the flashing cursor
+
+	* include/kc/timer.h, src/kc/timer.cc: made class Timer abstract
+
+	* src/ui/gtk/module.cc: show different module slot layout when
+	emulating a kc85/1 or kc87
+
+	* include/kc/mod_rom1.h, src/kc/mod_rom1.cc: rom module for the
+	kc85/1 series
+
+	* include/kc/memory7.h, src/kc/memory7.h: new files for the kc87
+	memory layout including basic rom
+
+	* include/kc/memory1.h, src/kc/memory1.h: removed basic rom as the
+	kc85/1 doesn't have it built in
+
+	* src/ui/generic/ui_1.cc: added emulation of the screen border and
+	the 20 line display mode
+
+2002-09-11  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/fileio/load_TAPE.c (loader_TAPE_load): fixed size calculation
+
+	* src/kc/tape.cc (remove): refresh display after remove
+	(add): show message in statusline after adding files; also displays
+	the loader which was used to load this file
+
+	* include/fileio/load.h, include/fileio/loadP.h: added filetype
+	to fileio_prop_t and get_type() to all the loaders
+
+2002-09-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc (export_wav): export tape files as .WAV
+	(export_tap): use fileio_save_tap() to export .TAP files
+
+2002-09-04  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/fileio/save_WAV.c, src/fileio/kc2wav.c: convert file to .WAV
+	format
+
+	* src/fileio/save_TAP.c, src/fileio/kc2tap.c: convert file to .TAP
+	format
+
+	* include/kc/tape.h (class Tape): renamed extract() to
+	export_tap() and added export_wav()
+
+2002-09-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/z80_fdc.cc (reset): clear callback list on reset
+
+	* include/kc/floppy.h, src/kc/floppy.cc: changed return type
+	for attach() to signal failures
+
+2002-08-31  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc: added menu entry to disable the emulation
+	speed limit
+
+	* src/kc/memory4.cc: changed memory layout for the a800-bfff
+	region; quite obscure but (partly) verified against a real KC;
+	fixes FRACTAL4
+
+	* src/kc/wav.cc (do_play): do some padding on the end of the
+	audio input to compensate the delay of the digital filter
+
+2002-08-26  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk1.cc, src/ui/gtk/ui_gtk3.cc,
+	src/ui/gtk/ui_gtk4.cc: removed unnecessary include statements
+
+2002-08-25  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/generic/scanline.cc: support for the color scrolling
+	effect moved out of the KC 85/4 display code; the KC 85/3
+	emulation now uses this code too
+
+	* include/ui/ui.h (class UI): removed obsolete function memWrite()
+
+	* src/ui/gtk/ui_gtk.cc (property_change): check values of the
+	event structure
+
+	* src/ui/generic/ui_8.cc (get_real_height, get_real_width): use
+	width and height which are divideable by 8 for easier display caching
+
+	* src/ui/gtk/ui_gtk3.cc, src/ui/gtk/ui_gtk4.cc: moved previously
+	static helper function hsv_to_gdk_color() to ui_gtk.cc
+
+	* src/ui/gtk/ui_gtk.cc (key_press_release): map key pad numbers
+	and some of the special keys
+
+	* include/ui/gtk/cmd.h, src/ui/gtk/cmd.cc: moved previously static
+	helper functions from header file to cmd.cc
+
+	* src/libaudio/load.c: added library to load audio files
+	(wav, mp3, flac, ...)
+
+	* src/kc/kc.cc: added --version command line flag which shows
+	the kcemu version and the configuration of some of the libraries
+
+2002-08-21  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/rc.cc (done): free allocated memory
+
+	* include/kc/rc.h (class RC): made destructor virtual and moved
+	  implementation to .cc file, implemented deallocation
+
+	* fixed lots of memory allocation problems using valgrind,
+	  (a great debugging/profiling tool by Julian Seward,
+	  http://developer.kde.org/~sewardj)
+	
+	* src/kc/memory.cc: added missing calls delete
+
+	* src/kc/memory4.cc: added missing call delete
+
+	* include/kc/cb.h (class Callback): fixed call to delete
+
+	* src/kc/mod_rom.cc (ModuleROM): fixed initialization
+
+	* src/kc/mod_ram.cc (ModuleRAM): fixed initialization
+
+	* src/kc/mod_ram1.cc (ModuleRAM1): fixed initialization
+
+	* src/kc/mod_ram8.cc (ModuleRAM8): fixed initialization
+
+	* src/kc/mod_64k.cc (Module64k): fixed initialization
+
+	* src/kc/keyb3.cc (init): fixed initialization
+
+	* src/ui/gtk/disk.cc (init): fixed call to delete
+
+	* src/libdbg/dbg.cc (DBG_class): fixed call to delete
+
+	* src/kc/rc.cc: fixed calls to delete
+
+	* src/kc/z80.cc (Z80): fixed initialization
+
+	* src/kc/mod_list.cc (ModuleList): fixed calls to delete
+
+	* src/kc/ic.cc (InterfaceCircuit): fixed initialization
+
+	* src/ui/gtk/ui_gtk.cc (init): fixed initialization, fixed calls to delete
+
+	* src/ui/gtk/ui_gtk4.cc (reset): fixed initialization
+
+2002-07-05  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* cleaned up lots of warnings produced by -Wall; fixed some
+	bugs that were pointed out by those warnings
+
+2002-06-16  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc: removed profiling code
+
+2002-06-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk1.cc (update): fixed display caching
+	bug (color change without value change didn't call the
+	drawing routine)
+
+	* src/kc/mod_ram1.cc (ModuleRAM1): initialize memory of
+	a new module with random values instead of zero bytes
+
+	* src/kc/kc.cc: removed obsolete port switch code
+
+	* include/kc/ports1.h, include/kc/ports3.h,
+	src/kc/ports1.cc, src/kc/ports3.cc: removed, they
+	weren't used for some time because the port switch
+	is now handled somewhere else
+
+	* src/kc/ports4.cc: removed obsolete port switch code;
+	removed references to CTC/PIO/MODULE;
+	ports now initialized to 0xff instead of 0x00
+
+	* src/libtape/kctape.cc: rewrote the argument parsing
+	to use getopt(); command line parameters are not fully
+	compatible to the previous version
+
+	* src/libtape/kct.cc (list): prevent division by zero
+	when listing empty files
+	(header_read): removed some error messages (that were
+	going to stderr)
+
+	* src/kc/debug.cc: added function to change the memory
+
+	* src/kc/z80.cc (LdRZ80): now using a private emulation
+	of the Z80 R register; the one in the Z80 emulation core
+	isn't compatible with the way kcemu uses that core
+	(fixes the missing monsters in JUNGLE)
+
+	* src/kc/memory4.cc (enableIRM): handle text irm area at
+	a800h when enabling/disabling the irm
+
+2002-06-09  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.5
+
+2002-06-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc: added -8 to commandline help output
+
+	* configure.in: added separate variable to enable sound;
+	using HAVE_LIBSDL to enable sound doesn't work after adding
+	SDL user interface code
+
+2002-05-29  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/tape.cc: added menu entry to rename files
+	in the tape archive
+
+	* include/libtape/kct.h, src/libtape/kct.cc: added method to
+	rename files in the tape archive
+
+	* src/kc/tape.cc (class CMD_tape_export): fixed return value
+	checking when exporting files
+
+2002-05-28  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/tape.cc, src/ui/gtk/tapeadd.cc: handle duplicate
+	file names when adding files to tape archives
+	(resurrection of tapeadd.cc which wasn't used for some time)
+
+2002-05-25  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/tape.cc (tapeNext): changed tape delay from 5
+	to 10 seconds; this should be enough to allow the basic file
+	loader to initialize basic and call CLOAD
+
+	* src/libtape/kctape.cc (add_file), src/kc/tape.cc (add):
+	fixed typo in file type handling which caused BASIC files
+	to be added as COM files
+
+	* src/fileio/load_AF.c (check_end): modified check for file
+	end; basic files can be larger than 255 blocks so we can't
+	check for the block number in this case; fixes loading bug
+	for some files from www.kc85emu.de (e.g. Spiele1M.tap)
+
+2002-04-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/ui/font1.h, src/ui/gtk/ui_gtk1.cc: changed font to
+	include empty chars between 0h and 20h
+
+	* include/ui/gtk/font1.h: moved to include/ui/font1.h, it's not
+	only usable for gtk
+
+2002-03-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk3.cc: changed obsolete type byte to byte_t
+
+	* include/ui/gtk/module.h, src/ui/gtk/module.cc: moved constructor
+	and destructor out of the header file
+
+	* src/kc/kc.cc, src/kc/sound3.cc: removed dependency on libSDL
+
+	* included first code of a port to BeOS
+
+	* kc/config.h is now included by kc/system.h, no need to include
+	both in every file
+
+2002-03-25  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc (ui_callback): fixed initialization problem
+	in time frame calculation which was caused by limited value range
+
+	* src/ui/gtk/ui_gtk.cc, src/ui/gtk/ui_gtk1.cc, src/ui/gtk/ui_gtk3.cc,
+	src/ui/gtk/ui_gtk4.cc, src/ui/gtk/ui_gtk8.cc: moved callback
+	implementation to base UI class as ui_callback()
+
+2002-03-23  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* added emulation of the LC 80 computer
+
+2002-03-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/tape.h (class Tape): 
+	renamed ctcSignal() to tape_signal() and getDelay() to get_delay()
+
+	* src/kc/pio1.h, src/kc/pio1.cc, src/kc/pio2.h, src/kc/pio2.cc,
+	src/kc/pio3.h, src/kc/pio3.cc, src/kc/pio4.h, src/kc/pio4.cc:
+	added tape_callback()
+
+	* src/kc/tape.cc (set_tape_callback): set callback function
+	for tape input
+
+	* include/kc/tape.h: added interface TapeCallback with function
+	tape_callback() that is called when the tape signal changes;
+	this removes the dependency on pio.h
+
+2002-02-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libtape/kct.cc (write): refuse to add a file if the
+	filename already exists in the archvie
+
+	* src/libtape/kct.cc: removed obsolate write() method
+
+	* src/libtape/kctape.cc: error handling if adding a file
+	with a name that is already in the archive
+
+2002-02-11  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.4
+	
+	* src/kc/kc.cc (main): set fileio mode when emulating kc85/1
+
+	* src/libtape/kctape.cc (main): added switch to add kc85/1 files;
+	those need to be treated differently with respect to block
+	numbering
+
+	* include/fileio/load.h, src/fileio/load.c: added functions
+	to get/set the kc-type for the fileio handling
+
+2002-02-10  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/fileio/load_TAPE.c (loader_TAPE_load): don't use
+	fill_header_COM() to rewrite the first tape block; this function
+	doesn't handle the difference between kc85/1 and kc85/3 filenames
+	which are padded with '\0' or ' ' respectively
+
+2002-02-09  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc (main): fixed daisy chain for kc85/1 (tape
+	was broken due to missing interrupts from the first pio)
+
+2002-02-04  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc (license): changed startup banner, new command
+	line switches to display license and warranty
+
+2002-01-22  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/sound.cc: simple sound emulation
+
+2002-01-21  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* added commandline option to scale the display by factor 2,
+	the rc file option is "Display Scale"
+
+2002-01-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* changed interrupt handling for ctc and pio, daisy chain
+	is now partially working (makes pharao playable, but still
+	with display errors)
+
+2002-01-19  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/ports4.cc (change_0x84), src/kc/memory4.cc:
+	implemented IRM switch
+
+2002-01-18  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/debug.cc (DebugZ80): fixed wrong formatting in
+	memory dump
+
+2002-01-09  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/module.cc (init): moved floppy disk basis to
+	be the topmost device in the module window
+
+	* src/kc/mod_list.cc (ModuleList): fixed typo that prevented
+	the module dialog to show busdrivers even in KC 85/3 and
+	KC 85/4 mode
+
+	* .kcemurc: system config file now has only config option
+	"Default KC Model" set to 4
+
+	* src/kc/ctc3.cc (irq_2): config option "Full Flash Support"
+	is now on by default
+
+	* src/ui/gtk/ui_gtk3.cc, src/ui/gtk/ui_gtk4.cc: reset was
+	called twice because the ui class registered itself two
+	times via z80->register_ic() - fixes flash bug after reset in
+	KC 85/4 mode
+
+2002-01-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk4.cc: changed the flash handling (display
+	of the diamonds in digger seems to be stable now if full
+	flash support is off)
+
+	* src/fileio/load_UNKNOWN.c (loader_UNKNOWN_load): set
+	start_addr to 0xffff if no real start address is found,
+	set type to COM if load and/or start address found
+
+	* src/kc/tape.cc (stop): don't change the power signal
+	when stopping the tape
+
+	* src/kc/kc.cc (main): fixed typo in statement to enable
+	tape power for KC 85/1 and KC 87
+
+2002-01-07  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libdisk/load_22dsk.c: added (readonly) support for
+	disk images that are compressed with gzip, filename handling
+	needs some changes though
+
+	* src/ui/gtk/disk.cc: activated 3rd disk image (tools.dump)
+	as predefined image
+
+	* added disk-image tools.dump which contains some importent
+	CP/M programs (most are from the CP/M starter kit from the
+	KC-Club: www.iee.et.tu-dresden.de/~kc-club/DOWNLOAD/DISK001)
+	
+	* src/kc/fdc_cmd.cc (FDC_CMD_WRITE_DATA::execute): fixed
+	missing call to floppy device selection
+
+2002-01-06  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.3
+	
+	* src/libdisk/load_22dsk.c (loader_22dsk_write_sector): 
+	added write support
+	
+	* src/libdisk/load_cdm.c (loader_cdm_write_sector): added
+	write support
+
+	* src/ui/gtk/disk.cc: show disks that are installed by
+	default as combobox entries
+
+2002-01-05  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/floppy.cc: fixed crash when the emulator tried
+	to access a floppy device with no attached floppy
+
+	* src/ui/gtk/ui_gtk*.cc: added/changed status info
+	showing the frames per second
+
+	* src/ui/gtk/tape.cc (init): don't set empty popup
+	on tape combobox
+
+	* Makefile.am: added the debian package control files to
+	the source distribution
+
+	* src/libdisk/load_dir.c: first working disk emulation
+	for unix directories (at least if pointed to directories
+	with reasonable content - will most likely crash on
+	directories with many or big files!)
+
+	* src/kc/fdc_cmd.cc (read_byte): fixed wrong call to
+	fetch_next_sector() which came one byte too early
+
+2002-01-03  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libdisk/load_cdm.c: handles disk format used by the
+	yaze CP/M emulator and its disk handling program cdm
+	(for now only disks created with the cdm command
+	"create disk.img 819200 -b1024 -d127 -o4 -s5" are
+	supported - this is the same format as the CAOS disk
+	that ships with the D004 floppy system)
+
+	* src/libdisk/load_22dsk.c: handles disk dumps done with
+	the 22DISK tool by Sydex
+
+	* src/libdisk/load_dir.c: emulate unix directories as
+	CP/M disk
+
+	* src/libdisk/disk.c: moved the file I/O for floppy
+	disks into a separate library
+
+	* src/kc/ctc.cc (trigger): don't run interrupt handler
+	if interrupts are not enabled! this seems to fix the
+	MicroDOS boot hang
+
+2002-01-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/kc.cc: added kc87 mode (equals kc85/1 mode with
+	color expansion installed), color expansion doesn't show
+	up in the module list anymore
+
+	* src/ui/gtk/module.cc: module user interface only displays
+	modules for the running computer type
+
+	* include/kc/mod_list.h (class ModuleList): added type field
+	for modules that specifies for which computer type the module
+	is intended for
+
+	* test/kc/t_cb_list.cc, test/kc/t_ctc.cc: first unit tests
+	based on Cppunit
+
+	* src/ui/gtk/disk.cc: user interface now somewhat functional -
+	initializastion not correct if disk-images are attached via
+	.kcemurc
+
+2002-01-01  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/fdc_cmd.cc: enabled write access
+
+	* src/kc/fdc.cc: now emulate all four floppies and allows
+	initialization in .kcemurc
+
+	* src/kc/floppy.cc (attach): fixed missing size calculation of
+	the offset table when attaching CDM floppies
+	(read_offsets): moved sector offset table into the Floppy class
+
+2001-12-31  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/ctc.cc: main ctc code is now processor independent
+	and can be used for the base and the floppy system /
+	handling of counter/timer mode changed to be more general
+	but needs some test and optimization eventually
+	
+	* src/kc/z80_fdc.cc, src/kc/ctc_fdc.cc: interrupt handling
+	working partially (MicroDOS system clock is running) but there
+	seems to be a ctc related problem that locks up the MicroDOS
+	system on boot
+
+	* include/ui/ui.h: removed reference to z80.h
+
+2001-12-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/z80_fdc.h, src/kc/z80_fdc.cc: moved the floppy
+	systems cpu emulation into separate files
+
+	* src/kc/z80.cc: lots of dead code removed
+
+	* test/kc/t_cb_list_1.cc, test/kc/t_cb_list_2.cc: added some
+	testcases for the callback code
+
+	* include/kc/cb_list.h, src/kc/cb_list.cc: moved the callback
+	handling out of z80.cc so it can also be used for the floppy
+	processor emulation
+
+2001-12-30  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/ctc*.h, src/kc/ctc*.cc: added layer between
+	core CTC emulation and system (processor) specific calls
+	to support the CTC usage in the floppy system emulation
+
+2001-12-29  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* compile fixes for gcc-3.0.x
+	* prepared debian binary release
+	* added manpages as required by debian policy
+
+2001-12-28  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* released version 0.3.2 on SourceForge.net
+
+2001-06-17  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* registred SourceForge.net project
+	
+2001-01-22  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/ctc.h, src/kc/ctc.cc: added CTCCallbackInterface that
+	allows other classes to register some interresting events of the
+	emulated CTC (Timer Value change, Start, Stop, Zero Counter)
+
+2001-01-20  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* include/kc/pio.h (class PIOCallbackInterface): output callbacks
+	now include the value as argument
+
+2001-01-15  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/memory4.cc (Memory4): load RAM-File on init
+	(Resource: "Load On Init"), hex number starting with 0x can
+	specify load addres; will only work with a patched System ROM
+	that doesn't zero all available memory
+
+2000-07-12  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/fileio/load_SSS.c: new loader for raw BASIC files (without
+	header bytes and filename)
+
+2000-07-10  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/tape.cc: Translation of GtkItemFactoryEntries and the
+	associated text (without the '_' markers) need to be the same or
+	else the retrieving of the widgets will fail!!!
+
+	* src/kc/tape.cc: fixed saving to tape
+
+2000-07-08  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/fileio/load.c: added get_name() function to the loader
+	interface
+
+	* src/kc/ctc1.cc, src/ui/gtk/ui_gtk1.cc, src/kc/pio3.cc: changed
+	debug code to use libdbg
+
+	* src/fileio/load_BASIC.c (loader_BASIC_load),
+	src/fileio/load_TAPE.c (loader_TAPE_load): fixed loaders to
+	correctly store the file blocks with the included block number
+
+2000-07-06  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/libtape/kctape.cc (add_file): changed file loading to use
+	the fileio library
+
+2000-07-02  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/ui_gtk.cc (create_main_window): didn't get property
+	change events anymore, maybe gtk_widget_set_events() behaves now
+	differently or the default event mask is different? - fixed
+
+2000-07-01  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/ui/gtk/module.cc (init): fixed another initialization bug
+
+2000-06-28  Torsten Paul  <Torsten.Paul@gmx.de>
+
+	* src/kc/mod_rom.cc (ModuleROM): fixed initialization bug that
+	caused segfaults when leaving the emulator

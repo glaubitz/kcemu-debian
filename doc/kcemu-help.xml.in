@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<help>
+<!--
+  **
+  ** Einleitung
+  **
+  -->
+<ref name="home"/>
+<p>
+<c><b><size value="3">KCemu @VERSION@</size></b>
+
+ <img src="kcemu.png"/> 
+
+
+<b><size value="1">(c) 1997-2010 Torsten Paul</size></b>
+<i><size value="-1">&lt;Torsten.Paul@gmx.de&gt;</size></i>
+
+
+
+
+
+
+</c></p>
+
+<!--
+  **
+  ** Inhaltsverzeichnis
+  **
+  -->
+
+<p><ref name="index"/><size value="2"><ref name="about"/>Inhaltsverzeichnis</size>
+
+<size value="1">1. <i>Allgemeines zum Emulator</i></size>
+<size value="-3"> </size>
+1.1. <link ref="about">Über KCemu</link>
+1.2. <link ref="license">Lizenz</link>
+1.3. <link ref="commandline">Kommandozeilenparameter</link>
+1.4. <link ref="keycommands">Tastenbedienung</link>
+
+<size value="1">2. <i><link ref="sys">Emulierte Systeme</link></i></size>
+<size value="-3"> </size>
+2.1. <link ref="sys-z9001">KC85/1, KC87</link>
+2.2. <link ref="sys-kc85">KC85/2-4</link>
+2.3. <link ref="sys-kc855">KC85/5</link>
+2.4. <link ref="sys-z1013">Z1013</link>
+2.5. <link ref="sys-lc80">LC 80</link>
+2.6. <link ref="sys-poly880">Polycomputer 880</link>
+2.7. <link ref="sys-a5105">BIC / A5105</link>
+2.8. <link ref="sys-kramermc">Kramer-Microcomputer</link>
+2.9. <link ref="sys-muglerpc">PC/M / Mugler-PC</link>
+2.10. <link ref="sys-vcs80">VCS 80</link>
+2.11. <link ref="sys-c80">C-80</link>
+
+<size value="1">3. <i>Funktionen</i></size>
+<size value="-3"> </size>
+3.1. <link ref="window-profile">Profile</link>
+3.2. <link ref="window-tape">Kassettenverwaltung</link>
+3.3. <link ref="window-disk">Diskettenverwaltung</link>
+3.4. <link ref="window-module">Modulverwaltung</link>
+3.5. <link ref="window-audio">Abspielen von Sound-Dateien</link>
+3.6. <link ref="window-save-memory">Speichern von Memory-Bereichen</link>
+3.7. <link ref="window-vdip">Vinculum USB</link>
+3.8. <link ref="window-plotter">Plotter</link>
+3.9. <link ref="window-screenshot">Screenshot</link>
+3.10. <link ref="window-video">Video</link>
+3.11. <link ref="window-colors">Farbeinstellung</link>
+
+</p>
+
+<!--
+  **
+  ** Über KCemu
+  **
+  -->
+
+<p><size value="2"><ref name="about"/>1.1. Über KCemu</size>
+
+  KCemu begann als Emulator für die KC85 Heimcomputer Serie
+  des VEB Mikroelektronik Mühlhausen. Inzwischen ist eine ganze
+  Reihe weiterer Systeme hinzugekommen.
+
+  Zur Zeit können die folgenden System emuliert werden:
+
+  - <link ref="sys-z9001">KC85/1, KC87</link>
+  - <link ref="sys-kc85">KC85/2-4</link>
+  - <link ref="sys-kc855">KC85/5</link>
+  - <link ref="sys-z1013">Z1013</link>
+  - <link ref="sys-lc80">LC 80</link>
+  - <link ref="sys-poly880">Polycomputer 880</link>
+  - <link ref="sys-a5105">BIC / A5105</link>
+  - <link ref="sys-kramermc">Kramer-Micro-Computer</link>
+  - <link ref="sys-muglerpc">PC/M / Mugler-PC</link>
+  - <link ref="sys-vcs80">VCS 80</link>
+  - <link ref="sys-c80">C-80</link>
+
+
+</p>
+
+<p>
+<size value="2"><ref name="license"/>1.2. Lizenz</size>
+
+  <b>KCemu @VERSION@, Copyright (c) 1997-2010 Torsten Paul.</b>
+
+  Dieses Programm ist freie Software. Sie können es unter
+  den Bedingungen der GNU General Public License, wie von der
+  Free Software Foundation herausgegeben, weitergeben und/oder
+  modifizieren, entweder unter Version 2 der Lizenz oder (wenn
+  Sie es wünschen) jeder späteren Version.
+
+  Die Veröffentlichung dieses Programms erfolgt in der
+  Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE JEDE
+  GEWÄHRLEISTUNG - sogar ohne die implizite Gewährleistung
+  der MARKTREIFE oder der EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+  Details finden Sie in der GNU General Public License.
+
+  Sie sollten eine Kopie der GNU General Public License zusammen
+  mit diesem Programm erhalten haben. Falls nicht, schreiben Sie
+  an die Free Software Foundation, Inc., 675 Mass Ave, Cambridge,
+  MA 02139, USA.
+
+
+</p>
+
+<p><size value="2"><ref name="commandline"/>1.3. Kommandozeilenparameter</size>
+
+  Es stehen die folgenden Kommandozeilenparameter zur Verfügung:
+
+<m> -0                   </m>Starten mit <link ref="sys-z1013">Z1013</link> Profil
+<m> -1                   </m>Starten mit <link ref="sys-z9001">Z9001 / KC 85/1</link> Profil
+<m> -2                   </m>Starten mit <link ref="sys-kc85">KC 85/2</link> Profil
+<m> -3                   </m>Starten mit <link ref="sys-kc85">KC 85/3</link> Profil
+<m> -4                   </m>Starten mit <link ref="sys-kc85">KC 85/4</link> Profil
+<m> -5                   </m>Starten mit <link ref="sys-kc855">KC 85/5</link> Profil
+<m> -6                   </m>Starten mit <link ref="sys-poly880">Poly-880</link> Profil
+<m> -7                   </m>Starten mit <link ref="sys-z9001">KC 87</link> Profil
+<m> -8                   </m>Starten mit <link ref="sys-lc80">LC 80</link> Profil
+<m> -9                   </m>Starten mit <link ref="sys-a5105">BIC/A5105</link> Profil
+<m> -a --autostart       </m>Automatischer Start des angegebenen Programms (KC 85/3 - /5)
+<m> -A --address         </m>Startadresse für das automatisch zu startende Programm
+<m> -d --datadir:        </m>Setzen des Daten-Verzeichnisses (für ROM-Images)
+<m> -E --effects         </m>Anzeige mit Screen-Effekten bei vergrößerter Darstellung
+<m> -f --floppy          </m>Aktivieren eines Disketten-Images beim Start
+<m> -F --fullscreen      </m>Start im Vollbild-Modus (wenn durch GUI unterstützt)
+<m> -h --help            </m>diese Hilfe anzeigen
+<m> -H --home            </m>Überschreiben der Einstellung für das Homeverzeichnis
+<m> -l --localedir       </m>Setzen des Locale-Verzeichnisses für die Sprachanpassung
+<m> -L --license         </m>Anzeige der Lizenz
+<m> -M --modules         </m>Modul(e) für die ersten Steckplätze definieren
+<m> -MM022,M011,..       </m>Einstellungen der Konfigurationsdatei werden überschrieben
+<m> -M+M022,M011,..      </m>zusätzliche Module zu denen aus der Konfigurationsdatei 
+<m> -o --debug-output:   </m>Debug-Ausgabe in Datei umleiten
+<m> -p --profile:        </m>Start mit dem angegebenen Profil
+<m> -P --select-profile: </m>Start mit Fenster zur Profil-Auswahl
+<m> -s --scale           </m>Vergrößerung der Anzeige (erlaubt sind die Werte 1, 2 und 3)
+<m> -t --tape            </m>Aktivieren eines Tape-Archives beim Start
+<m> -v --version         </m>Anzeige der KCemu Version und Konfiguration
+<m> -V --viewlist        </m>Ausführliche Liste der emulierten Typen
+<m> -W --warranty        </m>Anzeige des Haftungsausschlusses
+
+
+</p>
+
+<p><size value="2"><ref name="keycommands"/>1.4. Tastenbedienung</size>
+
+  Der Emulator kann über die folgenden Tastenkombinationen gesteuert werden:
+<m>
+ ALT + 1          Zoom x 1
+ ALT + 2          Zoom x 2
+ ALT + 3          Zoom x 3
+ ALT + A          Menü "Ansicht" (nur deutsche Version)
+ ALT + C          Konfiguration der Farbeinstellung
+ ALT + D          Diskette...
+ ALT + E          Menü "Emulator"
+ ALT + G          Maximale Geschwindigkeit ein/aus
+ ALT + H          Menü "Hilfe"
+ ALT + I          Information über CPU / PIO / CTC
+ ALT + K          Tastatur
+ ALT + L          Laden...
+ ALT + M          Module...
+ ALT + O          Menü "Optionen"
+ ALT + P          Einschalten (Power On)
+ ALT + Q (ALT-F4) Emulator beenden
+ ALT + R          Reset
+ ALT + T          Kassette (Tape)
+ ALT + U          Audio...
+ ALT + V          Menü "View" (nur englische Version)
+</m>
+
+</p>
+
+<p><size value="2"><ref name="sys"/>2. Emulierte Systeme</size>
+
+  Im Folgenden werden die emulierbaren Systeme vorgestellt. Dabei
+  gibt es bei einigen Systemen verschiedene Varianten die sich
+  z.B. durch Speicherausbau oder Systemprogramme unterscheiden.
+
+  Die fett dargestellten Namen können als Parameter für den
+  Kommandozeilenschalter -e benutzt werden, um die Emulation der
+  aufgelisteten System-Variante zu starten. Alternativ kann dieser
+  Name in der Konfigurationsdatei für die Eigenschaft "Default KC Model"
+  eingetragen werden.
+
+  Wird keine oder eine ungültige Angabe gemacht, wird ein KC85/4
+  emuliert.
+
+
+</p>
+
+<p><size value="2"><ref name="sys-z9001"/>2.1. KC85/1, KC87</size>
+
+  Die Heimcomputer KC85/1 (früherer Name Z9001) und KC87 wurden vom
+  VEB Robotron-Meßelektronik "Otto Schön" Dresden hergestellt.
+
+<c> <img src="sys-z9001.jpg"/> </c>
+<size value="-2"><c>Foto: KC87</c></size>
+
+  Die folgenden Varianten können emuliert werden:
+
+  <b>* kc85/1</b> (z9001, z9001.10)
+    Z9001 mit Schwarz/Weiß Anzeige und 16k RAM, ohne internes BASIC.
+
+  <b>* z9001.11</b>
+    Wie Z9001.10 aber mit Farberweiterung.
+
+  <b>* kc87.10</b>
+    Wie KC87.11 aber ohne Farberweiterung.
+
+  <b>* kc87.11</b> (kc87)
+    Nachfolger des Z9001 mit eingebautem 10k BASIC ROM und 
+    standardmäßig eingebauter Farberweiterung.
+
+  <b>* kc87.20</b>
+    Wie KC87.20, aber ohne Farberweiterung.
+
+  <b>* kc87.21</b>
+    Neue Serie des KC87, das BASIC wurde um einige Befehle z.B. zur
+    Ansteuerung von Plottern erweitert.
+
+
+</p>
+
+<p><size value="2"><ref name="sys-kc85"/>2.2. KC85/2-4</size>
+
+  Die Heimcomputer KC85/2 (früherer Name HC-900), KC85/3 und
+  KC85/4 wurden vom VEB Mikroelektronik Mühlhausen hergestellt.
+
+<c> <img src="sys-kc85.jpg"/> </c>
+<size value="-2"><c>Foto: KC85/4</c></size>
+
+  Parameter für die Emulation:
+
+  <b>* kc85/2</b> (hc900, hc-900)
+    KC85/2 mit 16k RAM und 8k System ROM mit HC-CAOS 2.2. BASIC
+    muß als zusätzlicher Modul gesteckt werden.
+
+  <b>* kc85/3</b>
+    KC85/3 mit 16k RAM, 8k System ROM mit HC-CAOS 3.1 und bereits
+    eingebautem 8k BASIC ROM.
+
+  <b>* kc85/4</b>
+    KC85/4 mit 64k RAM, auf 64k erweitertem Bildschirmspeicher,
+    12k System ROM mit HC-CAOS 4.2 und 8k BASIC ROM.
+
+  Zusätzlich zum Grundgerät werden einige Erweiterungen unterstützt.
+  So wird das Floppy-System (D004) emuliert, wodurch es unter anderem
+  möglich ist, verschiedene für den KC85/4 verfügbare CP/M Systeme
+  zu nutzen. Darunter sowohl das dem D004 beiliegende, speziell für
+  den KC85 angepaßte MicroDOS als auch das auf dem weit verbreiteten
+  ZDDOS/ZSDOS basierende ML-DOS.
+
+  Die GIDE Schnittstelle zum Anschluß einer IDE-Festplatte oder
+  CF-Karte wird soweit emuliert, daß der Zugriff mit ML-DOS möglich
+  ist. Aktiviert werden kann die GIDE Schnittstelle zur Zeit nur
+  in der Konfigurationsdatei (per Parameter <i>Hard Disk 0</i> für die
+  erste Festplatte im Format einer Seagate ST-157A mit 42MB,
+  C/H/S = 560/6/26 und Parameter <i>Hard Disk 1</i> für eine zweite
+  Festplatte im Dateiformat des MyZ80 CP/M-Emulators mit 8MB,
+  C/H/S = 128/1/32).
+
+
+</p>
+
+<p><size value="2"><ref name="sys-kc855"/>2.3. KC85/5</size>
+
+  Den KC85/5 hat es offiziell nie gegeben. Dies ist ein umgebauter
+  KC85/4 bei dem sowohl der RAM auf 256k als auch der ROM auf 48k
+  (16k System ROM, 8k BASIC ROM and 24k User ROM) erweitert wurde.
+  Zusätzlich kommt ein verbessertes System-Programm zum Einsatz
+  (HC-CAOS 4.4) welches den nun verfügbaren Speicher verwalten kann
+  und auch sonst einige nützliche Dinge mitbringt.
+
+  Typischerweise kommt ein derartig aufgerüstetes Basis-System nicht
+  allein zum Einsatz sondern in Verbindung mit einem Floppy-System
+  in dem sogar in einigen Fällen eine Schnittstelle für IDE-Festplatten
+  eingebaut wurde.
+ 
+<c> <img src="sys-kc855.jpg"/> </c>
+<size value="-2"><c>Foto: KC85/5 mit Bustreiber (D002) und Floppy-System (D004)</c></size>
+
+  Parameter für die Emulation:
+
+  <b>* kc85/5</b>
+    KC85/5 mit 256k RAM, 16k System ROM mit HC-CAOS 4.4, 8k BASIC
+    ROM und 24k User-ROM. Der User-ROM enthält die Programmpakete
+    KC-Debugger (Testmonitor und Reassembler), EDAS 1.6 und
+    KC-Forth.
+    Für den KC85/5 wird auch die Emulation des Floppy-Systems (D004)
+    verändert indem als System-ROM der Floppy die Version 3.1 zum
+    Einsatz kommt (im Gegensatz zur Originalen Version die die Nummer
+    2.0 trägt).
+    In dieser Kombination (HC-CAOS 4.4 und D004 3.1) ist es möglich
+    das System direkt von Diskette oder Festplatte zu starten.
+
+
+</p>
+
+<p><size value="2"><ref name="sys-z1013"/>2.4. Z1013</size>
+
+  Der Z1013 ist ein Bausatz der vom VEB Robotron Riesa produziert wurde.
+  Geliefert wurde eine bestückte Grundplatine und eine Folienflachtastatur
+  die selbst angelötet werden mußte. Ein Trafo für Spannungsversorgung
+  mußte auch erst beschafft werden bevor es losgehen konnte.
+
+<c> <img src="sys-z1013.jpg"/> </c>
+<size value="-2"><c>Foto: Z1013 ohne die berüchtigte Folienflachtastatur</c></size>
+
+  Vom Z1013 gab es bereits ab Werk eine ganze Reihe von Versionen mit
+  unterschiedlichen Systemparametern. Durch die Bastelfreude der
+  Besitzer sind dazu noch viele Erweiterungen und System-Programme
+  dazugekommen.
+
+  Parameter für die Emulation (die MHz Angaben entsprechen denen
+  der realen Systeme, die Emulation beachtet diese noch nicht
+  korrekt):
+
+  <b>* z1013.01</b>
+    Z1013 mit 16k RAM und 2k ROM mit System 2.02. Die CPU läuft mit 1MHz.
+
+  <b>* z1013.12</b>
+    Z1013 mit 1k sRAM und 2k ROM mit System 2.02. Die CPU läuft mit 2MHz.
+    (Diese Version war wohl als Steuermodul für die Industrie gedacht.)
+
+  <b>* z1013.16</b>
+    Z1013 mit 16k RAM und 2k ROM mit System 2.02. Die CPU läuft mit 2MHz.
+
+  <b>* z1013.64</b> (z1013)
+    Z1013 mit 64k RAM und 2x2k ROM. Die CPU läuft mit 2MHz. Der System ROM
+    enthält sowohl das System 2.02 als auch Version A.2. Genutzt wird
+    System 2.02.
+
+  <b>* z1013.a2</b>
+    Identisch mit dem z1013.64, es wird jedoch das System A.2 geladen die
+    eine erweiterte Tastatur mit 8x8 Matrix unterstützt.
+
+  <b>* z1013.rb</b>
+    Z1013 mit 64k RAM und 4k ROM. Das System ist erweitert und nennt sich
+    2.028 RB. Unterstützt wird eine angeschlossene K7659 Tastatur.
+
+  <b>* z1013.surl</b>
+    Z1013 mit 64k RAM und 4k ROM. Der ROM enthält den "Super Ur-Lader 5.0"
+    der beliebige Dateien von Kassette als System-Monitor laden kann. Es
+    wird eine Hardware-Modifikation (Port 04h) unterstützt die es dem
+    Urlader erlaubt den System-ROM komplett abzuschalten, so daß der
+    komplette Adressraum aus RAM besteht.
+
+  <b>* z1013.bl4</b>
+    Z1013 mit 64k RAM und 4k ROM. Der ROM enthält den Bootlader BL4 der
+    System-Monitore von Diskette laden oder ein an den Z1013 angepaßtes
+    CP/M System starten kann.
+
+
+</p>
+
+<p><size value="2"><ref name="sys-lc80"/>2.5. LC80</size>
+
+VEB Mikroelektronik Erfurt
+
+<c> <img src="sys-lc80.jpg"/> </c>
+<size value="-2"><c>Foto: Ein betriebsbereiter LC80</c></size>
+
+  Vom LC80 existieren 2 Varianten mit unterschiedlicher ROM-Bestückung.
+  Die Eine besitzt 2 1k-ROMs (U505) an den Adressen 0000h und 0800h. Die
+  Andere ist mit einem 2k-EPROM (U2716) bestückt, wodurch der Monitor
+  in einem zusammenhängenden Speicherbereich von 0000h - 07ffh liegt.
+
+  Das Monitorprogramm unterscheidet sich dabei lediglich um einige an
+  die unterschiedlichen Adressbereiche angepasste Sprungbefehle. Ein
+  funktionaler Unterschied besteht nicht.
+
+  Parameter für die Emulation:
+
+  <b>* lc80, lc80.1k</b>
+    LC80 mit 1k RAM und 2 x 1k ROM (0000h-03ffh, 0800h-0bffh).
+
+  <b>* lc80.2k</b>
+    LC80 mit 1k RAM und 1 x 2k ROM (0000h-07ffh).
+  
+</p>
+
+<p><size value="2"><ref name="sys-poly880"/>2.6. Polycomputer 880</size>
+
+VEB Polytechnik Karl-Marx-Stadt
+
+<c> <img src="sys-poly880.jpg"/> </c>
+<size value="-2"><c>Foto: Ein Poly880 in seinem Koffer</c></size>
+
+  Parameter für die Emulation:
+
+  <b>* poly880</b>
+    Poly 880 mit 2 x 1k ROM (0000h-03ffh, 1000h-13ffh), optional können
+    zusätzliche ROM-Dateien an die 2 freien ROM-Plätze geladen werden
+    (poly880c.rom: 2000h-23ffh, poly880d.rom: 3000h-33ffh).
+
+  <b>* poly880.sc1</b>
+    Poly 880 mit modifiziertem SC1-ROM. Im Adressbereich 0000h-0fffh
+    befindet sich ein 4k großer, an die Hardware des Poly 880 angepasster
+    ROM des Schachcomputers SC1.
+
+</p>
+
+<p><size value="2"><ref name="sys-a5105"/>2.7. BIC / A5105</size>
+
+VEB Robotron-Meßelektronik "Otto Schön" Dresden
+
+<c> <img src="sys-a5105.jpg"/> </c>
+<size value="-2"><c>Foto: A5105 Komplettsystem</c></size>
+
+</p>
+
+<p><size value="2"><ref name="sys-kramermc"/>2.8. Kramer-Microcomputer</size>
+
+  Dieser Computer wurde im Buch "Praktische Microcomputertechnik"
+  von M. Kramer vorgestellt und war als erweiterbares System konzipiert.
+
+</p>
+
+<p><size value="2"><ref name="sys-muglerpc"/>2.9. PC/M / Mugler-PC</size>
+
+  Der PC/M wurde als CP/M-fähiger Selbstbaucomputer in einer Artikelreihe
+  der Zeitschrift "Funkamateur" von A. Mugler und H. Mathes vorgestellt.
+
+</p>
+
+<p><size value="2"><ref name="sys-vcs80"/>2.10. VCS 80</size>
+
+  Für Lern- und Testzwecke entwickeltes minimales Mikrorechnersystem.
+  Industielle Vorbilder sind der LC80 und der Polycomputer 880. Ziel
+  waren vor allem minimale Bauelementekosten um den Nachbau für den
+  Amateur zu ermöglichen.
+  Vorgestellt wurde der VCS80 von Eckhard Schiller in der Zeitschrift
+  "radio fernsehen elektronik" (rfe) Ausgabe 3/1983.
+
+</p>
+
+<p><size value="2"><ref name="sys-c80"/>2.11. C-80</size>
+
+  Von Dipl.-Ing. Joachim Czepa entwickelter Einplatinencomputer mit 8-stelliger
+  7-Segmentanzeige und Schnittstelle für Kassettenrecorder.
+  Vorgestellt wurde das System in der "Schaltungssammlung für den Amateur,
+  4. Lieferung 1986", Blatt 6-13 bis 6-18.
+
+</p>
+
+<p><size value="2"><ref name="window-profile"/>3.1. Profile</size>
+
+  <img src="window-select-profile_small.png"/>
+
+  <u>System</u>
+
+  Im "System"-Tab wird angegeben wie das Profil heißt und welches System
+  emuliert werden soll. Zusätzlich kann ein Kommentar eingegeben werden,
+  der das System kurz beschreibt. Dieser Kommentar wird auch angezeigt, 
+  wenn der Emulator mit dem Profilauswahl-Fenster gestartet wird.
+
+  <img src="window-profile-1_small.png"/>
+
+  <u>Anzeige</u>
+
+  Der Tab mit den Eigenschaften für die Bildschirmdarstellung erlaubt es die folgenden
+  Einstellungen vorzunehmen:
+
+  <b>Skalierung</b>
+  Anzeigeskalierung des Hauptfensters. Bei einem Wert von 1 entspricht ein
+  Pixel auf dem Bildschirm des emulierten Systems auch genau einem Pixel
+  im emulierten System. Es ist möglich die Darstellung auf das doppelte
+  oder das dreifache zu vergrößern.
+
+  <b>Effekte</b>
+  Das Einschalten der Effekte hat nur bei einer Einstellung der Skalierung
+  von >1 Auswirkungen. Bei der Skalierung auf doppelte Größe wird dann
+  ein sogenannter Scanline-Effekt erzeugt, bei dem jede 2. Bildschirmzeile
+  etwas abgedunkelt wird. Wird die Skalierung auf dreifache Größe eingestellt,
+  erfolgt eine Filterung des Bildes die eine etwas unscharfe Darstellung
+  zur Folge hat.
+
+  <b>IRM Zugriff</b>
+  Wird diese Option eingeschaltet, werden bei der Emulation eines KC 85/2 bzw.
+  KC 85/3 die Darstellungsfehler durch den Zugriff auf den Bildwiederholspeicher
+  (IRM) simuliert.
+
+  <b>Debug</b>
+  Diese Option dient lediglich der Fehlersuche und hat bei einer 
+  Skalierungseinstellung von 1 zur Folge, dass der für die Anzeige benutzte
+  Caching-Algorithmus sichtbar gemacht wird. Das erfolgt dadurch, dass
+  veränderte Bildschirmbereiche für kurze Zeit heller dargestellt werden als
+  normal. Diese Option sollte deshalb im Normalfall ausgeschaltet bleiben.
+
+  <img src="window-profile-2_small.png"/>
+
+  <u>Module</u>
+
+  Im Tab "Module" können die Module angegeben werden, die beim Start des Emulators mit
+  dem jeweiligen Profil automatisch geladen werden sollen.
+
+  <img src="window-profile-3_small.png"/>
+
+  <u>Medien</u>
+
+  <img src="window-profile-4_small.png"/>
+
+  <u>KC85</u>
+
+  Dieser Tab enthält spezielle Einstellungen für die Emulation der KC85 Serie
+  aus Mühlhausen (KC85/2-5).
+
+  <b>D004</b>
+  Einschalten dieser Option aktiviert die Emulation des D004 Floppy Basis Devices.
+  Dieses ist notwendig für die Nutzung von Disketten oder Festplatten (über GIDE)
+  am KC85. Außerdem enthält das D004 die Hardware um CP/M Systeme auf dem KC laufen
+  lassen zu können.
+
+  <b>F8 ROM</b>
+  Der im D004 eingebaute System-ROM liegt normalerweise im Modul-Schacht FC. Eine
+  kleine Modifikation der D004 Hauptplatine ermöglicht den Einsatz eines erweiterten
+  ROMs. Dadurch können 2 unterschiedliche Versionen der D004 Software genutzt werden.
+  Wird diese Option eingeschaltet, wird der Zugriff auf den zweiten System-ROM
+  freigeschaltet.
+
+  <b>Bustreiber</b>
+  Diese Option gibt an, wie viele D002 Bustreiber emuliert werden sollen. Maximalwert
+  für den Emulator sind 4 Geräte.
+
+  <img src="window-profile-5_small.png"/>
+
+</p>
+
+<p><size value="2"><ref name="window-tape"/>3.2. Kassettenverwaltung</size>
+
+  Zur Nachbildung eines Kassettenlaufwerkes werden spezielle
+  Archiv-Dateien benutzt. Diese können ein oder mehrere Programme
+  enthalten. Angezeigt werden der Name im Archiv (der nicht mit
+  dem Dateinamen übereinstimmen muß den der KC verwendet) sowie
+  einige Eigenschaften der Dateien:
+
+  <img src="window-tape.png"/>
+
+  Das Öffnen und Schließen von Archivdateien erfolgt mit den
+  beiten Knöpfen rechts oben. Ist keine Datei geöffnet, sind
+  alle Knöpfe außer dem <i>Öffnen</i>-Knopf inaktiv.
+
+  Das Anlegen von neuen, leeren Archivdateien geschieht auch
+  über den <i>Öffnen</i>-Knopf und der Angabe einer Datei, die noch
+  nicht existiert. Wird die Nachfrage ob die nicht existierende
+  Datei angelegt werden soll mit Ja beantwortet, wird ein neues
+  leeres Archiv angelegt.
+
+  Um dem Archiv neue Dateien hinzuzufügen, muß der Menüpunkt
+  <i>Datei Hinzufügen</i> im Kontextmenü gewählt werden.
+
+  Das Laden von Dateien kann auf 2 Arten erfolgen:
+
+  1.) Mit Doppelclick auf die Datei oder über die Menüpunkte <i>Datei
+      Ausführen</i> bzw. <i>Datei Laden</i> wobei ein Doppelclick dem
+      Menüpunkt <i>Datei Ausführen</i> entspricht.
+
+      Bei <i>Datei Laden</i> wird der Inhalt der Datei einfach in den
+      Speicher des Systems kopiert. Da dies sozusagen ohne Wissen
+      des emulierten Systems geschieht, funktioniert diese
+      Vorgehensweise nicht in allen Fällen ohne Probleme. Bei
+      Dateien vom Typ COM, also direkt ausführbaren Programmen
+      treten normalerweise keine Probleme auf.
+      Bei BASIC Dateien funktioniert das leider nicht so ohne
+      weiteres. Man kann sich behelfen, indem man den BASIC-Interpreter
+      mit BYE verläßt, die Datei in den Speicher lädt und danach
+      mit REBASIC (oder auch WBASIC, je nach System) zum BASIC
+      zurückkehrt.
+
+      Bei <i>Datei Ausführen</i> wird wie der Name schon andeutet
+      versucht die Datei nicht nur in den Speicher zu laden sondern
+      auch gleich zu Starten. Das funktioniert nur für Dateien
+      vom Typ COM.
+
+  2.) Laden per Kassetten-Emulation. Dazu muß wie beim realen
+      KC vorgegangen werden:
+
+      - Datei im Kassetten-Fenster selektieren
+      - Im emulierten System LOAD (oder CLOAD o.ä.) eingeben
+      - Mit <i>Play</i> das Abspielen der Datei starten
+      - Im emulierten System evtl. mit ENTER bestätigen
+      - Warten
+      - Bei größeren Programmen noch länger Warten
+      - Evtl. Programm starten (z.B. per RUN bei BASIC Programmen)
+
+      Das Laden dauert im Normalfall genau so lange wie das Laden
+      von Kassette beim echten System. Es ist jedoch möglich dies
+      etwas zu beschleunigen. Dazu kann im Menü <i>Konfiguration</i>
+      der Punkt <i>Maximale Geschwindigkeit</i> ausgewählt werden.
+      Dann wird die Emulation nicht mehr auf die Geschwindigkeit
+      des Original-Systems gebremst und läuft je nach PC auf dem
+      der Emulator läuft um ein vielfaches schneller als das
+      Original.
+
+      Achtung: Nicht vergessen die Geschwindigkeits-Bremse wieder
+      einzuschalten, sonst sind die Monster in einigen Spielen
+      ziemlich schnell ;-).
+ 
+
+</p>
+
+<p><size value="2"><ref name="window-disk"/>3.3. Diskettenverwaltung</size>
+
+  Die Diskettenverwaltung bietet die Möglichkeit bis zu 4 Diskettenlaufwerke
+  mit virtuellen Disketten zu bestücken.
+
+  <img src="window-disk.png"/>
+
+  Die Daten können dabei in unterschiedlicher Form vorliegen:
+
+  <b>1. Disketten-Dump</b>
+
+     Dieses Format stammt vom Programm Anadisk der Firma Sydex. Die Datei
+     enhält einfach 1:1 die Daten der Diskette mit ein paar Zusatzinformationen
+     zu Sektor-Nummern und Blockgrößen. Da die Daten unkomprimiert vorliegen
+     sind die Dateien (bei gleicher Formattierung der Original-Diskette)
+     immer gleich groß. Für eine 2-seitige KC-Diskette mit 80 Spuren mit je
+     5 Sektoren zu 1024 Byte ist die Dump-Datei genau 825600 Bytes groß.
+
+     Werden Disketten auf Basis einer solchen Datei emuliert, sind diese
+     im Emulator auch schreibbar.
+
+  <b>2. Teledisk-Image</b>
+
+     Das Teledisk Format stammt vom gleichnamigen Programm welches auch von
+     der Firma Sydex stammt. Es ist zur Archivierung von Disketten gedacht
+     und unterstützt 2 Komprimierungsverfahren. Es sollte möglich sein alle
+     mit Teledisk erzeugten Images im Emulator zu nutzen, aufgrund des nicht
+     offen gelegten Formates kann es jedoch bei einigen Dateien zu Problemen
+     kommen.
+
+     Das Schreiben auf Disketten die auf einem Teledisk-Image basieren
+     ist derzeit nicht möglich.
+
+  <b>3. Dateien in einem Verzeichnis</b>
+
+     Es ist möglich eine Auswahl an Dateien in ein Verzeichnis zu kopieren
+     und dieses dann dem Emulator als Diskette zu übergeben. Dazu muß im
+     Öffnen-Dialog in das entsprechende Verzeichnis gewechselt werden und
+     es darf kein Dateiname im Öffnen-Dialog angegeben sein.
+
+     Nach der Auswahl des Verzeichnisses wird eine virtuelle Diskette
+     mit den vorhandenen Dateien erstellt. Liegen in diesem Verzeichnis
+     mehr Dateien als auf die Diskette passen, werden einige Dateien
+     ignoriert.
+
+     Das Format der virtuellen Diskette entspricht dem KC-Format mit 2 Seiten,
+     80 Spuren mit 5 Sektoren zu 1024 Byte. Das Inhaltsverzeichnis wird so
+     angelegt, daß 2 Spuren als Systemspuren zu reservieren sind.
+
+     Wird im Verzeichnis eine spezielle Datei mit dem Namen @boot.sys gefunden,
+     wird der Inhalt der Datei in die Systemspuren übernommen. Diese Datei
+     ist im Normalfall 20480 Byte groß.
+
+     Beschreiben einer solchen virtuellen Diskette ist nur eingeschränkt
+     möglich. Es werden lediglich Schreibzugriffe auf die Systemspur in
+     die Datei @boot.sys umgelenkt soweit diese vorhanden ist.
+
+
+</p>
+
+<p><size value="2"><ref name="window-module"/>3.4. Modulverwaltung</size>
+
+  Je nach emuliertem System steht eine Auswahl an Modulen bereit die das
+  System um die verschiedensten Funktionen erweitern.
+
+  - <link ref="window-module-z9001">Module für den KC85/1, KC87</link>
+  - <link ref="window-module-kc85">Module für den KC85/2 - KC85/5</link>
+  - <link ref="window-module-z1013">Module für den Z1013</link>
+
+
+  <size value="1"><b><ref name="window-module-z9001"/>Module für den KC85/1, KC87</b></size>
+
+  <img src="window-module-z9001.png"/>
+
+  <u>RAM-Module</u>
+
+  - 16k RAM (ab Adresse 4000h)
+  - 16k RAM (ab Adresse 8000h)
+
+  <u>Software-Module</u>
+
+  - ZM30
+  - EDAS
+  - IDAS / ZM
+  - BITEX
+
+  <u>sonstige Module</u>
+
+  - 192k RAM/EPROM Modul
+
+  Ein von Lutz Elßner entwickelter und im "Funkamateur" vorgestellter
+  Modul mit 32k RAM und 160k ROM.
+
+  - KC-Pascal Modul
+
+  Der Pascal Modul ist im Gegensatz zu den "normalen" ROM-Modulen nicht
+  10k sondern 32k groß und belegt den Adressraum zwischen 4000h und bfffh.
+  Dadurch kann er nicht zusammen mit zusätzlichen RAM-Modulen betrieben
+  werden.
+
+  - Mega-ROM Modul
+
+  Entworfen von Alexander Schön besitzt der Modul 2,5MB ROM und enthält
+  durch die in der Modul-Verwaltungssoftware eingebaute Komprimierungsfunktion
+  in der vorliegenden Version 3.5MB an Daten in 311 Dateien!
+
+  Mit dabei u.a. auch ein an den Modul angepaßtes Mini-CP/M welches auf
+  2 im ROM befindliche ROM-Floppies zugreifen kann.
+
+  - 128k ROM Bank
+
+  Dieser Modul von Ulrich Zander enthält eine Auswahl an nützlichen
+  Programmen, erfordert aber ein leicht verändertes System-ROM und ist
+  zur Zeit nicht ohne weiteres im Emulator nutzbar.
+
+  - Plotter XY4131
+
+  Nur unter Linux verfügbar ist dieser Modul der keinem realen
+  Modul entspricht sondern einen am I/O Port des KC87 angeschlossenen
+  Kleinplotter XY4131 nachbildet. Alle an den Plotter übertragenen
+  Befehle werden umgewandelt und in eine PostScript Datei geschrieben.
+
+  - CPM-Z9 BOOT, CPM-Z9 64k RAM und CPM-Z9 Floppy
+
+  Diese 3 Module sind nur sinnvoll in der Kombination aller drei
+  Module nutzbar und stellen eine CP/M-fähige Erweiterung des KC87
+  dar die durch das "Zentralinstitut für Kernforschung" in Rossendorf
+  etwickelt wurde.
+
+  Nach Auswahl aller drei Module wird nach einem Reset des KC87 nicht
+  mehr der übliche Prompt angezeigt. Jetzt meldet sich der KC87 mit
+  CP/M-System. Nach dem Einlegen der CPM-Z9 System-Diskette kann durch
+  Eingabe von BOOT und betätigen mit der ENTER-Taste das CP/M System
+  von Diskette geladen und gestartet.
+
+  Über die Auswahlbox "IRM Color Expansion" kann eingestellt werden, ob
+  das emulierte System über die im Gerät eingebaute Farberweiterung
+  verfügen soll oder nicht.
+
+
+  <size value="1"><b><ref name="window-module-kc85"/>Module für den KC85/2 - KC85/5</b></size>
+
+  <img src="window-module-kc85.png"/>
+
+  <u>RAM-Module</u>
+  
+  - M022: Expander RAM (16k)
+  - M011: 64k RAM
+  - M036: 128k Segmented RAM
+  - M032: 256k Segmented RAM
+  - M034: 512k Segmented RAM
+  - M035: 1M Segmented RAM
+
+  <u>Software-Module</u>
+
+  - M012: Texor
+  - M026: Forth
+  - M027: Development
+  - M900: WordPro '86 (KC85/3)
+  - M901: WordPro '86 (KC85/4)
+
+  <u>sonstige Module</u>
+
+  - M001: Digital In/Out
+
+    Die eigentliche Funktion des Moduls als Ein-/Ausgabe Schnittstelle
+    ist zwar nicht nutzbar, es werden aber die im Modul enthaltenen
+    Schnittstellenschaltkreise PIO (U855D) und CTC (U857D) emuliert.
+    So kann z.B. der CTC als Zähler genutzt werden.
+
+  - M006: BASIC
+
+    Dieser Modul steht nur im KC85/2 und KC85/3 Modus zur Verfügung, da
+    er nur für diese Systeme einsetzbar ist. Sinnvoll ist er eigentlich
+    nur für den KC85/2, da dieser kein eingebautes BASIC besitzt.
+    Eine Besonderheit dieses Modules ist, daß er nicht nur das BASIC
+    selbst enthält, sondern auch ein komplettes System (HC9001-CAOS,
+    es gibt auch Module die sich mit HC-CAOS 2.2 melden). Deshalb kann
+    der Modul nicht einfach per <i>SWITCH</i> eingeschaltet werden, sondern
+    muß mit <i>JUMP</i> initialisiert werden (z.B. <i>JUMP 8</i>, wenn er im
+    Schacht 8 steckt.
+
+  - M008: Joystick
+
+    Der Joystick-Modul enthält keine Modulsteuerung und ist daher auch
+    ohne <i>SWITCH</i> Anweisung immer aktiv.
+
+    In der Windows-Version des Emulators ist dieser Modul nicht nutzbar.
+
+  - M035x4: 4MB RAM
+
+    Dieser RAM-Module besteht logisch aus 4 x M035 Modulen, die alle 4
+    Moduladressen eines Modulschachtes belegen. Normalerweise wird nur
+    jede 4. Moduladresse genutzt (8, C, 10, 14, 18, ...), steckt dieser
+    Modul z.B. in Schacht 8, existieren auf den Moduladressen 8, 9, A
+    und B jeweils ein M035 Modul mit 1MB.
+
+    Achtung: Bei Verwendung des originalen Floppy-Systems mit D004 ROM
+    Version 2.0 (läßt sich im <i>MENU</i> per "J FC FF" anzeigen) tritt
+    bei Nutzung des 4MB-Modules in Verbindung mit MicroDOS ein Überlauf
+    bei der Berechnung des verfügbaren Speichers auf. Dadurch ist für
+    MicroDOS trotz des des 4MB Moduls kein zusätzlicher Speicher sichtbar.
+    Dies kann durch Verwendung von 3 einzelnen 1MB Modulen (M035)
+    umgangen werden. Oder es wird die neue D004-ROM-Version der KC85/5
+    Emulation genutzt (Version 3.1) bei der dieser Fehler beseitigt wurde.
+
+  Zusätzlich ist es möglich in der Konfigurationsdatei eigene ROM-Module
+  zu definieren.
+
+
+  <size value="1"><b><ref name="window-module-z1013"/>Module für den Z1013</b></size>
+
+  <img src="window-module-z1013.png"/>
+
+  <u>sonstige Module</u>
+
+  - 256k RAM-Floppy
+
+    Es können maximal 2 RAM-Floppy Module genutzt werden. Intern wird
+    der erste an Port 98h und der zweite an port 58h verwaltet.
+
+  - FDC (Schneider)
+
+    Floppy-Erweiterung (vom Computer Club Jena?)
+
+  - GDC 82720
+
+    Erweiterte Bildschirmdarstellung mit 80-Zeichen pro Zeile
+
+  - RTC (Port 20h-2fh), RTC (Port 70h-7fh)
+
+    Echtzeituhr, es werden Datum und Uhrzeit des Systems übernommen
+    auf dem der Emulator läuft. Die beiden Module unterscheiden sich
+    nur durch die Portadresse unter der sie im Z1013 System
+    angesprochen werden.
+
+  Um das CP/M von der Diskette "z1013gdc.dump" zu starten, muß die
+  Z1013 Variante mit den Bootlader BL4 gestartet werden. Dann sollten
+  folgende Module ausgewählt sein: GDC 82720, FDC (Schneider),
+  RTC (port 70h-7fh) und 2 mal 256k RAM-Floppy.
+
+  Nach einem Reset muß sich der Bootlader mit der Auswahl
+
+      Z1013: Z      CP/M: C
+
+  melden. Nach drücken der C Taste wird das CP/M von Diskette
+  gestartet.
+
+
+</p>
+
+<p><size value="2"><ref name="window-audio"/>3.5. Abspielen von Sound-Dateien</size>
+
+  Diese Funktion ermöglicht es vorhandene Sound-Dateien abzuspielen
+  die z.B. von Kassette aufgenommen wurden und nun im WAV (oder einem
+  anderen unterstützten) Format vorliegen.
+
+  <img src="window-audio.png"/>
+
+  Die Anzahl der unterstützten Formate hängt von den bei der
+  Übersetzung des Emulators aktivierten Audio-Module ab. Beim
+  Öffnen einer Datei wird von allen Modulen in einer vorgegebenen
+  Reihenfolge versucht die Datei zu öffen. Ist das erfolgreich,
+  dann wird der entsprechende Modul zum Lesen und Abspielen der
+  Datei genutzt.
+
+  Liste aller möglichen Module in der Reihenfolge in der sie
+  beim Öffnen einer Datei aufgerufen werden:
+
+  <b>OSS</b> - Lädt keine Datei sondern direkt von der Soundkarte.
+  Dieser Modul ist nur unter Linux verfügbar und wird aktiviert
+  indem im Dialog zum Öffnen der Datei die spezielle Gerätedatei
+  "/dev/dsp" ausgewählt wird.
+
+  <b>ALSA</b> - Analog zu OSS, es wird jedoch ein anderer
+  Sound-Treiber benutzt. Als Dateiname muß "/dev/snd" angegeben
+  werden.
+
+  <b>FLAC</b> - Modul zum Lesen von verlustfrei komprimierten
+  Sound-Dateien im FLAC-Format.
+
+  <b>SNDFILE</b> - Dieser Modul nutzt die Bibliothek libsndfile
+  (http://www.mega-nerd.com/libsndfile/) und kennt alle Formate
+  die von dieser Bibliothek unterstützt werden.
+
+  <b>AUDIOFILE</b> - Dieser Modul basiert auf der Bibliothek
+  libaudiofile (http://www.68k.org/~michael/audiofile/) und
+  unterstützt daher alle Formate dieser Bibliothek.
+
+  <b>WAV</b> - Ein unabhängig von externen Bibliotheken und daher
+  immer im Emulator verfügbarer Modul zum Lesen von WAV Dateien.
+  Dieser Modul ist sehr einfach gehalten und kann nur eine
+  begrenzte Anzahl von WAV-Dateien mindestens aber Mono-Dateien
+  mit 8 oder 16 Bit Samples und beliebiger Sample-Frequenz.
+
+  <b>OggVorbis</b> - Modul zum Lesen von komprimierten OGG Dateien.
+  Da die Komprimierung Verlustbehaftet ist, kann es bei sehr stark
+  Komprimierten Dateien zu Lesefehlern kommen, da nicht mehr das
+  beim Aufnehmen vorhanden Signal generiert werden kann.
+
+  <b>MP3</b> - Modul zum Lesen von komprimierten MP3 Dateien mit
+  der Bibliothek libmp3lame. Dieses Format komprimiert wie das
+  OGG-Format verlustbehaftet, daher gelten die gleichen
+  Einschränkungen bei starker Komprimierung.
+
+  <b>RAW</b> - Dieser Modul behandelt alle übergebenen Dateien
+  als wären sie unkomprimierte Sound-Dateien mit dem Format
+  44100kHz, 8bit, Mono.
+
+
+</p>
+
+<p><size value="2"><ref name="window-save-memory"/>3.6. Speichern von Memory-Bereichen</size>
+
+  Zusammenhängende Bereiche des Hauptspeichers können auf einfache
+  Art und Weise als Datei gespeichert werden. Dabei ist zu beachten,
+  dass immer der aktuell von der CPU sichtbare Speicher angezeigt bzw.
+  in die Datei geschrieben wird.
+
+  <img src="window-savemem_small.png"/>
+
+  Der im Fenster angezeigte Speicherinhalt ist statisch auch wenn
+  die Emulation weiterläuft. Über den Button "Aktualisieren" kann
+  aber erneut der aktuelle Speicherinhalt geladen werden, ohne das
+  Fenster zu verlassen.
+
+  Die beiden Toggle-Buttons hinter den Adressangaben schalten das
+  automatische Scrolling der Speicheranzeige zu den jeweils angegebenen
+  Adressen ein bzw. aus.
+
+
+</p>
+
+<p><size value="2"><ref name="window-vdip"/>3.7. Vinculum USB</size>
+
+  Emuliert wird die Schnittstelle zum VDIP1 Modul der Firma FTDI.
+  Dieser bietet die Möglichkeit auf einfache Art und Weise USB
+  Massenspeicher-Geräte (vorrangig USB-Sticks) am KC anzuschließen.
+
+  Die auf dem Modul enthaltene Firmware übernimmt dabei die komplette
+  Verwaltung des angeschlossenen USB-Sticks und bietet dem KC den Zugriff
+  auf die gespeicherten Dateien bzw. erlaubt es Dateien auf dem USB-Stick
+  abzulegen.
+
+  Notwendig für die Nutzung der emulierten USB-Schnittstelle ist das
+  aktivieren des "Vinculum USB" Moduls, der eine spezielle Form des
+  Digital-I/O Moduls M001 nachbildet, basierend auf der Schaltung, die
+  Mario Leubner auf den Web-Seiten des "KC85 Labors" vorgestellt hat.
+  Dort finden sich auch weitere Hinweise und Programme für die Nutzung
+  des Moduls (http://www.kc85.susowa.homeftp.net/).
+
+  Der zusätzlich vorhandene ROM-Modul mit der CAOS Terminal-Software
+  erlaubt einen einfachen Zugriff auf die Funktionen des Moduls.
+  Verfügbar sind 3 Versionen der Terminal-Software:
+
+  - Version 1.2
+  - Version 2.0 für CAOS 4.2
+  - Version 2.0 für CAOS 4.4
+
+  Version 1.2 unterstützt noch nicht die Funktionen zur Nutzung der
+  Zeitstempel für Dateien. Version 2.0 existiert in 2 Varianten. Die
+  speziell für CAOS 4.4 erweiterte Variante, erlaubt es bei einigen
+  Kommandos den Dateinamen direkt anzugeben (also z.B. <m>DIR B*.*</m>,
+  statt <m>DIR &lt;ENTER&gt;</m> mit nachfolgender Abfrage der Maske).
+
+  Welche Dateien sichtbar sein sollen, kann über den Menüpunkt
+  "Emulator / Vinculum USB" festgelegt werden. Die Auswahl eines
+  Verzeichnisses wirkt wie das Stecken eines USB-Sticks mit den
+  Daten unterhalb dieses Verzeichnisses.
+
+</p>
+
+<p><size value="2"><ref name="window-plotter"/>3.8. Plotter</size>
+
+  Das Plotter-Fenster zeigt die Ausgabe eines emulierten Klein-Plotters
+  XY4131. Dazu muss in der KC85/1 bzw. KC87 Emulation der Plotter-Modul
+  ausgewählt und die entsprechende Treiber-Software (Plotter-BASIC und
+  GRPLOT.COM) geladen sein. GRPLOT.COM befindet sich auf der zum
+  Plotter mitgelieferten Programmkassette R0114.
+  Außerdem werden 2 RAM-Module benötigt, da der Treiber GRPLOT.COM im
+  Speicherbereich des 2. RAM-Modules (8000h-BFFFh) läuft.
+
+  <img src="window-plotter-1_small.png"/>
+  <size value="-2"><c>Das Plotter-Fenster mit den Ausgaben...</c></size>
+
+  <img src="window-plotter-2_small.png"/>
+  <size value="-2"><c>...dieses kleinen BASIC Programmes</c></size>
+
+  Über die Einstellungen auf der rechten Seite des Fensters können die
+  Eigenschaften beim Plotten eingestellt werden.
+
+  <b>Stiftfarbe</b>
+  Bestimmt die Farbe mit der gezeichnet wird. Änderungen an dieser Einstellung
+  wirken sich sofort aus.
+
+  <b>Papierfarbe</b>
+  Bestimmt die Hintergrundfarbe, also sozusagen die Farbe des Papiers auf
+  dem gezeichnet. Diese Einstellung wird nur beim Löschen des Zeichenbereiches
+  übernommen.
+
+  <b>Nullpunkt X</b> und <b>Nullpunkt Y</b>
+  Bestimmen die Position der Koordinate 0,0 des Zeichenbereiches in Bezug
+  auf die obere linke Ecke des Papiers (in Millimeter). Damit kann der
+  Zeichenbereich verschoben werden. Auch diese Einstellung wird erst beim
+  Löschen des Zeichenbereiches übernommen.
+
+  <b>Linienbreite</b>
+  Dicke des Stiftes (in Millimeter) mit dem gezeichnet wird. Änderungen an
+  dieser Einstellung wirken sich sofort aus.
+
+  <b>Zeichenbereich</b>
+  Anzeige des Zeichenbereiches. Es wird ein dünner grüner Rahmen um den
+  möglichen Zeichenbereich (180 x 255 Millimeter) des Plotters angezeigt.
+  (Achtung: Das Einschalten dieser Option verlangsamt die Bilddarstellung
+  erheblich!)
+
+  <b>Stift anzeigen</b>
+  Anzeige der Stiftposition mit einem kleinen Fadenkreuz.
+  (Achtung: Das Einschalten dieser Option verlangsamt die Bilddarstellung
+  erheblich!)
+
+  <b>Refresh</b>
+  Definiert alle wieviel Millisekunden die Darstellung des Zeichenbereiches
+  erfolgen soll. Umso höher dieser Wert, desto seltener wird der Zeichenbereich
+  angezeigt was aber die benötigte Rechenleistung verringert.
+
+  <b>In PDF-Datei plotten</b>
+  Hier kann eine Datei angelegt werden, in die die folgenden Ausgaben auf dem
+  Plotter geschrieben werden. Für die Ausgabe in eine PDF-Datei hat die
+  Funktion "Zeichenbereich" löschen den zusätzlichen Effekt, dass eine neue
+  Seite erzeugt wird.
+  Dadurch können mehrere Zeichungen in eine PDF-Datei ausgegeben werden.
+
+  <b>Speichern</b>
+  Über den Button "Speichern" kann die aktuell angezeigte Zeichnung als PNG
+  Datei gespeichert werden. Die PNG Datei hat dabei eine Auflösung von
+  2100 x 2970 Bildpunkten, was einer A4-Seite mit 10 Pixeln pro Millimeter
+  entspricht.
+
+
+  <u>Der Kleinplotter XY 4131</u>
+
+  <img src="sys-xy4131.jpg"/>
+
+  Einige technische Daten des Plotters:
+
+  <m>Papierformat             </m>A4
+  <m>Effektive Zeichenfläche  </m>255mm x 180mm
+  <m>Raster                   </m>2550 x 1800 Schritte
+  <m>Minimale Schrittweite    </m>0,1 mm
+  <m>Zeichengeschwindigkeit   </m>100 mm/s
+  <m>Abmessungen              </m>396 mm x 177 mm x 82 mm
+  <m>Masse                    </m>3 kg
+
+</p>
+
+<p><size value="2"><ref name="window-screenshot"/>3.9. Screenshot</size>
+
+  Screenshots der Bildschirmausgabe des emulierten Systems können in
+  verschiedenen Formaten gespeichert werden. Die zur Verfügung stehenden
+  Formate sind abhängig vom (Host-) System auf dem der Emulator läuft,
+  aber normalerweise stehen die folgenden Formate zur Verfügung.
+
+  - PNG
+  - JPEG
+  - TIFF
+  - BMP
+
+  <img src="window-screenshot.png"/>
+  <size value="-2"><c>Das Screenshot-Fenster</c></size>
+
+  Der aktuelle Bildschirminhalt wird beim Öffnen des Screenshot-Fensters
+  und beim Drücken des Buttons "Screenshot" übernommen und angezeigt. Soll
+  nur ein Ausschnitt des Bildschirminhaltes gespeichert werden, kann mit
+  Hilfe der Eingabefelder "Links"/"Rechts"/"Oben"/"Unten" jeweils eine
+  bestimmte Anzahl an Pixelzeilen abgeschnitten werden. Der ausgewählte
+  Bereich wird dabei durch eine schwarz/weiß gestrichelte Linie dargestellt.
+
+  Zum Speichern muss dann das gewünschte Format und der Dateiname ausgewählt
+  werden. Durch Drücken des Buttons "Speichern" wird der angezeigte
+  Bildschirminhalt bzw. -ausschnitt in der Datei abgespeichert.
+
+</p>
+
+<p><size value="2"><ref name="window-video"/>3.10. Video</size>
+
+  Zusätzlich zur Ausgabe im Emulator-Fenster kann der Bildschirminhalt
+  des emulierten Systems auch in eine Video-Datei geschrieben werden.
+
+  <img src="window-video.png"/>
+  <size value="-2"><c>Das Video-Fenster</c></size>
+
+  Möglich sind dabei die folgenden Video-Formate
+
+  <b>- Theora/Ogg</b>
+    Ein lizenzfreies Video-Format der Xiph.org Foundation. Dieses Format
+    können aktuelle Versionen des Firefox Internet Browsers (ab Version 3.5)
+    ohne zusätzliche Software abspielen.
+
+  <b>- AVI</b>
+    Das "Audio Video Interleave" Format ist ein weit verbreitetes, von
+    Microsoft definiertes Container Format welches verschiedene Typen
+    von Ton- und Video-Spuren erlaubt. KCemu nutzt als Videoformat
+    "DivX MPEG-4 Version 5".
+
+  <b>- MPEG 4</b>
+    Video-Format nach MPEG-Standard.
+
+  <b>- Dirac</b>
+    Lizenzfreies Video-Format entwickelt von der BBC Research Abteilung
+    der BBC (British Broadcasting Corporation). Dirac ist die Referenz-
+    Implementierung des Video-Formates.
+
+  <b>- Schroedinger</b>
+    Optimierte aber zum Teil noch experimentelle Implementierung des von
+    der BBC entwickelten Dirac Video-Formates.
+
+  <b>- GIF (animiert)</b>
+    Das Grafikformat GIF erlaubt nicht nur die Speicherung von einem
+    einzelnen Bild, sondern von mehreren Bildern in einer Datei. Durch
+    eine Erweiterung, die ursprünglich von Web-Browsern eingeführt wurde,
+    ist es möglich kleinere Videos im GIF Format zu speichern.
+
+    Bei Einstellung von 50 Bildern pro Sekunde wird die erzeugte GIF Datei
+    optimiert, indem doppelte Bilder nicht gespeichert werden. Bei
+    Einstellung von weniger als 50 Bildern pro Sekunde ist diese Optimierung
+    derzeit nicht möglich.
+
+  <b>- VNC</b>
+    Hier erfolgt die Ausgabe des Videos nicht in eine Datei, sondern der
+    Emulator kann so die Rolle eines VNC Servers übernehmen. Das bedeutet,
+    das die Bildschirmausgabe des emulierten Systems von einem anderen
+    Rechner per VNC-Client angezeigt werden kann (Vergleichbar mit
+    Remote-Desktop für Windows).
+
+  Welche dieser Formate verfügbar sind, hängt von der Installation ab,
+  normalerweise sollte mindestens "Theora/Ogg" verfügbar sein.
+
+</p>
+
+<p><size value="2"><ref name="window-colors"/>3.11. Farbeinstellung</size>
+
+  Zur Farbeinstellung können die Werte Helligkeit und Kontrast verändert
+  werden. Bei einigen Systemen wie KC85/2 bis KC85/5 und BIC / A5105
+  können dabei Vordergrund und Hintergrundfarbe getrennt eingestellt
+  werden.
+  Bei allen anderen Systemen wirkt sich nur die Einstellung der Fordergrund-
+  Farbe aus.
+
+  <img src="window-colors.png"/>
+  <size value="-2"><c>Die Farbeinstellung</c></size>
+
+</p>
+
+</help>

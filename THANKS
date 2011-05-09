@@ -1,0 +1,26 @@
+Marat Fayzullin
+	for the Z80 emulation core used for the main processor
+	(I needed to tweak some bits of the emulation core; see
+	src/z80core/README for the list of changes)
+Marcel de Kogel
+	for the Z80 emulation core used for the KC floppy
+	processor
+Thomas Bretz
+	for the OS/2 port of KCemu (see http://www.d4m.de/)
+Thomas Ludwig
+	for the great KC website at http://www.kc85emu.de/ and
+	lots of bugreports and hints how to make KCemu better
+Holger Krull
+	for providing lots of information about the LC 80
+	computer (see http://www.lc80.de/)
+Kev Thacker
+	for interesting insights concerning the floppy emulation
+	(he's also the author of the KC driver for M.E.S.S. the
+	Multi-Emulator Super System, see http://mess.emuverse.com/)
+Volker Pohlers
+	for help with the windows port, technical information and
+	bugreports
+Alexander Schön
+	for starting the windows port, lots of tips and for providing
+	a huge pile of files for use with the emulator or with
+	information about the various systems

@@ -1,0 +1,143 @@
+##
+# $Id: NEWS,v 1.10 2002/10/31 16:39:53 torsten_paul Exp $
+#
+
+KCemu 0.3.8
+
+  * initial support for GIDE interface that allows to connect
+    up to two IDE hard disks (or CF-Cards) to the KC85
+  * added module digital in/out (M001) that contains one
+    PIO and one CTC
+  * added emulation of the so called KC85/5 which is a KC85/4
+    with expanded RAM (replaced internal 64k system RAM with
+    256k) and ROM (16k CAOS, 32k BASIC+USER); it uses the new
+    CAOS 4.4
+  * fixed KC85/4 keyboard emulation
+  * added emulation of the Kramer Microcomputer (from the book
+    "Praktische Microcomputertechnik" and the Mugler PC (PC/M)
+    presented in the magazine "Funkamateur"
+  * added segmented RAM memory modules M036 (128k), M032 (256k),
+    M034 (512k), M035 (1M) and M035x4 (4M)
+  * fixed 16k RAM module M022
+  * fixed memory bank switching of RAM8
+  * added config file entry and command line option to
+    enable/disable the display effects for scaled screen
+    output
+  * added emulation of the display effect caused by screen
+    memory access on KC85/2 and KC85/3
+  * fixed basic module for KC85/2
+  * added support for basicode files (incomplete, but it's
+    possible to add basicode files in ASCII format to a
+    tape archive and load them using the load function of
+    a bascoder)
+
+KCemu 0.3.7
+
+  * Windows Port using GTK-Win32
+  * added emulation of the Polycomputer 880
+  * upgrade to GTK+-2.2.1
+  * fixed display cache handling
+  * fixed keyboard reset bug
+  * relaxed file type checking for standard tape files; now
+    most .KCC files should be loadable
+  * fixed cpu timing and display resolutions for BIC/A5105
+  * fixed text output in graphic mode for BIC/A5105
+  * added 192 KByte RAM/EPROM module for KC85/1
+  * added joystick module M008
+  * added Z1013 emulation
+  * added 256k RAM-Floppy module for Z1013
+  * added BIC/A5105 emulation
+  * added CPM-Z9 emulation (CP/M for KC87 using a floppy
+    and a 64k RAM module)
+  * started emulation of the plotter XY4131
+  * added autostart for BASIC programs in KC85/1 and
+    KC87 mode (BASIC must be initialized first!); autostart
+    routine is described in MP 3/89, page 86 ("Basic-Run
+    im OS für die KC87-Familie")
+  * handle BASIC DATA files (signature 0xd4, 0xd4, 0xd4)
+    produced by CSAVE*"FILENAME";ARRAYNAME and BASIC
+    LIST files (signature 0xd5, 0xd5, 0xd5) produced
+    by LIST#1"FILENAME"
+  * work with both libsndfile-0.0.x and libsndfile-1.0.x
+  * added simple program to convert TeleDisk images to
+    uncompressed disk dumps
+  * added loader for disk images produced by the Sydex
+    TeleDisk program (only normal compression for now)
+  * lots of compile fixes for gcc-3.2
+  * added the notion of computer variants to allow to
+    differentiate between e.g. the kc87.11 and kc87.21
+    model (which have different basic and system ROMs)
+  * fixed memory initialization for kc85/1 and kc87
+    (fixes MAZOGS)
+  * output pin of timer channel 2 is connected to channel 3
+    trigger input pin in kc85/1 mode; fixes system time
+    calculation
+  * added missing initialization for kc85/1 rom module;
+    fixes core dump on exit
+
+KCemu 0.3.6
+
+  * added emulation of screen border and 20 line display
+    mode for KC 85/1 and KC 87
+  * removed BASIC ROM from KC 85/1; it doesn't have a
+    BASIC interpreter built in
+  * changed memory layout for KC 85/4; fixes FRACTAL4
+  * added menu entry to disable the emulation speed limit
+  * fixed calculation problem of the main CPUs R register;
+    this fixes the missing monsters in JUNGLE
+  * added library to load various audio files
+  * some juggling in the display code again, now both
+    the KC 85/3 and KC 85/4 support the color scrolling
+    effect in BoulderDash
+
+KCemu 0.3.5
+
+  * added emulation of the LC 80 computer (thanks to Holger
+    Krull for providing the necessary information at
+    www.lc80.de)
+  * big internal changes in the display code; there is now
+    a generic display layer to simplify the porting to other
+    architectures
+  * started BeOS port to check the generic display layer --
+    not quite usable due to some threading bugs and missing
+    user interface
+  * renaming of files in tape archives is now possible
+  * allow adding .TAP files with multiple files with the same
+    name (by renaming the duplicated names)
+  * fixed some tape handling bugs
+  * fixed initialization bug in the display code
+
+KCemu 0.3.4
+
+  * new switch for kctape to add KC85/1 files (only needed
+    for COM files)
+  * bugfix for KC85/1 tape files
+  * simple sound emulation (still buggy, sound is sometimes
+    not turned off) -- requires libSDL
+  * implemented IRM switch for KC85/4
+  * changed interrupt code to handle daisy chaining
+    (makes pharao playable, but still with display errors)
+
+KCemu 0.3.3
+
+  * fixed bug in flash handling (diamonds in digger didn't
+    show correctly after reset)
+  * fixed tape handling, stop button working again
+  * fixed typo that prevented the busdrivers to show up
+    in the module window
+  * added disk image with CP/M tools from the KC-Club
+  * allow compressed disk images in 22DISK format
+  * fixed floppy selection when writing data, file copy
+    (e.g. from disk B: to disk C:) should now work correctly
+  * disk emulation for unix directories (don't try
+    to attach directories with many (e.g. > 100)
+    or big files!)
+  * emulate 4 disks now
+  * disk handling partially functional
+  * use cppunit for unit tests
+
+KCemu 0.3.2
+
+  * released a debian binary package of KCemu v0.3.2
+  * added manpages because the debian packaging system
+    requires them
