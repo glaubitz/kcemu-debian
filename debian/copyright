@@ -1,12 +1,12 @@
 This work was packaged for Debian by:
 
-    Adrian Glaubitz <glaubitz@physik.fu-berlin.de> on Thu, 25 Feb 2010 15:19:10 +0100
+    John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de> on Thu, 25 Feb 2010 15:19:10 +0100
 
 It was downloaded from:
 
     <http://kcemu.sourceforge.net/>
 
-Upstream Author(s):
+Upstream Author:
 
     Torsten Paul <torsten.paul@gmx.de>
 
@@ -38,7 +38,7 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2010 Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+    Copyright (C) 2010-2012 John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
 
 and is licensed under the GPL version 2,
 see "/usr/share/common-licenses/GPL-2".

@@ -1,3 +1,12 @@
+kcemu (0.5.1+dfsg-3) unstable; urgency=low
+
+  * Bump to standards version 3.9.2.
+  * Use my full name for maintainership.
+  * Fix helper-templates-in-copyright lintian warning.
+  * Update debian/copyright.
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Mon, 20 Feb 2012 19:01:13 +0100
+
 kcemu (0.5.1+dfsg-2) unstable; urgency=low
 
   * Fix FTBFS on ports kfreebsd-i386, kfreebsd-amd64
