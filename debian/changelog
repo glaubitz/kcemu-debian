@@ -4,8 +4,10 @@ kcemu (0.5.1+dfsg-3) unstable; urgency=low
   * Use my full name for maintainership.
   * Fix helper-templates-in-copyright lintian warning.
   * Update debian/copyright.
+  * Include 0001-Fix-type-declaration-for-gzf-in-struct-dsk_data_t.patch
+    to fix FTBFS bug with recent versions of zlib.
 
- -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Mon, 20 Feb 2012 19:01:13 +0100
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Mon, 12 Mar 2012 02:52:00 +0100
 
 kcemu (0.5.1+dfsg-2) unstable; urgency=low
 
