@@ -1,3 +1,10 @@
+kcemu (0.5.1+dfsg-4) unstable; urgency=low
+
+  * Convert for Multi-Arch support.
+  * Bump standards to 3.9.3.
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Fri, 15 Jun 2012 16:33:37 +0200
+
 kcemu (0.5.1+dfsg-3) unstable; urgency=low
 
   [ John Paul Adrian Glaubitz ]
