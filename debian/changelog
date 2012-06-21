@@ -1,3 +1,11 @@
+kcemu (0.5.1+dfsg-5) unstable; urgency=low
+
+  * Include glib through glib.h to fix FTBFS with glib 2.33+
+  * Use gbp-pq for managing quilt patches
+  * Use libsdl1.2-dev instead of libsdl-dev as build dependency
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Fri, 22 Jun 2012 00:01:28 +0200
+
 kcemu (0.5.1+dfsg-4) unstable; urgency=low
 
   * Convert for Multi-Arch support.

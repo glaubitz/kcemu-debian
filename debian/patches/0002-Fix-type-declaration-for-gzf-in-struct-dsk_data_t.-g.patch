@@ -1,13 +1,12 @@
-From 65dcf60359d6450c3eeef271297bbc651e5ce4ff Mon Sep 17 00:00:00 2001
 From: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
 Date: Mon, 12 Mar 2012 01:17:08 +0100
-Subject: [PATCH] Fix type declaration for gzf in struct dsk_data_t. gzFile
- from zlib.h is already of type pointer, so no need to
- declare gzf as gzFile *.
+Subject: Fix type declaration for gzf in struct dsk_data_t. gzFile from
+ zlib.h is already of type pointer, so no need to declare gzf as
+ gzFile *.
 
 ---
  src/libdisk/load_22dsk.c |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/libdisk/load_22dsk.c b/src/libdisk/load_22dsk.c
 index 5c1309d..3f52053 100644
@@ -22,6 +21,3 @@ index 5c1309d..3f52053 100644
    int read_only;
    int len;
    struct {
--- 
-1.7.9.1
-

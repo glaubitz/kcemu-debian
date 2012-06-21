@@ -1,7 +1,6 @@
-From 04416ce2112a66d4bd342f7c34eb087a6459eb56 Mon Sep 17 00:00:00 2001
 From: Michael Karcher <karcher@physik.fu-berlin.de>
 Date: Sun, 11 Jul 2010 23:50:25 +0200
-Subject: [PATCH] Directly check for Joystick interface
+Subject: Directly check for Joystick interface
 
 ---
  configure.in           |    9 +++++++++
@@ -11,7 +10,7 @@ Subject: [PATCH] Directly check for Joystick interface
  4 files changed, 30 insertions(+), 8 deletions(-)
 
 diff --git a/configure.in b/configure.in
-index 0f3e777..26d6251 100644
+index 54a89c2..5ad5678 100644
 --- a/configure.in
 +++ b/configure.in
 @@ -790,6 +790,15 @@ else
@@ -31,7 +30,7 @@ index 0f3e777..26d6251 100644
  	Makefile
  	include/Makefile
 diff --git a/include/kc/config.h.in b/include/kc/config.h.in
-index dbd72cf..1f81b16 100644
+index 7ca4885..2d187fa 100644
 --- a/include/kc/config.h.in
 +++ b/include/kc/config.h.in
 @@ -121,6 +121,9 @@
@@ -115,6 +114,3 @@ index 6b85956..b21f405 100644
  
    /*
     *  RAM module 64k (kc85/2-4)
--- 
-1.7.1
-
