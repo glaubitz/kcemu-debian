@@ -1,0 +1,23 @@
+From: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Date: Wed, 19 Dec 2012 04:18:45 +0100
+Subject: =?UTF-8?q?Provide=20format=20strig=20to=20printf=20in=20show=5Fsamp?=
+ =?UTF-8?q?le()=20to=0Aprevent=20FTBFS=20with=20-Werror=3Dformat-security=20?=
+ =?UTF-8?q?enabled.?=
+
+---
+ src/util/tape-tool.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/util/tape-tool.c b/src/util/tape-tool.c
+index 0c329ea..9204bbc 100644
+--- a/src/util/tape-tool.c
++++ b/src/util/tape-tool.c
+@@ -374,7 +374,7 @@ show_sample(int sample, int fill, const char *text)
+       
+       printf(" ");
+     }
+-  printf(text);
++  printf(text, "%s");
+ }
+ 
+ int
