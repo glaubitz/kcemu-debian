@@ -374,7 +374,7 @@ show_sample(int sample, int fill, const char *text)
       
       printf(" ");
     }
-  printf(text);
+  printf(text, "%s");
 }
 
 int
