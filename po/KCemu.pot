@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KCemu 0.5.1\n"
 "Report-Msgid-Bugs-To: Torsten.Paul@gmx.de\n"
-"POT-Creation-Date: 2010-03-07 20:51+0100\n"
+"POT-Creation-Date: 2010-08-24 20:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -118,10 +119,6 @@ msgstr ""
 
 #: images/keyboard.glade:27
 msgid "Keyboard"
-msgstr ""
-
-#: images/keyboard.glade:80
-msgid "Sorry, keyboard display not configured."
 msgstr ""
 
 #: images/legal.glade:6
@@ -2484,8 +2481,12 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/ui/gtk/keyboard.cc:558
+#: src/ui/gtk/keyboard.cc:560
 msgid "KCemu: Keyboard"
+msgstr ""
+
+#: src/ui/gtk/keyboard.cc:608
+msgid "Sorry, keyboard display not configured."
 msgstr ""
 
 #: src/ui/gtk/module.cc:211
