@@ -11,4 +11,7 @@ http://kcemu.sourceforge.net
 
 to acquire the ROM, disk and tape images there.
 
--- Adrian Glaubitz <glaubitz@physik.fu-berlin.de>, 2010.06.23
+Since KCemu does not work without these (non-free) ROMs, it is part
+of the contrib distribution in Debian.
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Tue, 14 Oct 2014 21:09:00 +0200
