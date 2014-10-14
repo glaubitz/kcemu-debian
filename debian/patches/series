@@ -1,3 +1,2 @@
-0002-Fix-type-declaration-for-gzf-in-struct-dsk_data_t.-g.patch
 0003-Include-glib-through-glib.h-to-fix-FTBFS-with-glib-2.patch
 0004-Provide-format-strig-to-printf-in-show_sample-to.patch
