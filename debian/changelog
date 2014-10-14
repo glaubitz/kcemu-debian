@@ -1,3 +1,27 @@
+kcemu (0.5.1+git20141014+dfsg-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * Drop debian/patches/0001-Directly-check-for-Joystick-
+    interface.patch, merged upstream.
+  * Drop debian/patches/0002-Fix-type-declaration-for-
+    gzf-in-struct-dsk_data_t.-g.patch, merged upstream.
+  * Drop debian/patches/0003-Include-glib-through-glib.h-to-fix
+    FTBFS-with-glib-2.patch, merged upstream.
+  * Drop incorrect debian/patches/0004-Provide-format-strig-to-printf-
+    in-show_sample-to.patch, proper patch merged upstream.
+  * Add dh-autoreconf to Build-Depends in debian/control and run
+    debhelper with "--with autoreconf" to update config.{sub,guess}
+    and {libtool,aclocal}.m4. Fixes FTBFS on arm64 as well as
+    kfreebsd-* and hurd-i386 (Closes: #727913, #744442, #764682).
+  * Update debian/copyright to copyright format 1.0 and update years.
+  * Add Vcs-* fields to debian/control.
+  * Update standards version to 3.9.6 in debian/control.
+  * Update install path for shared kcemu files in kcemu-common package.
+  * Add missing new lines at the end of multiple files in debian directory.
+  * Explain contrib distribution status of KCemu in debian/README.Debian.
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Tue, 14 Oct 2014 21:12:18 +0200
+
 kcemu (0.5.1+dfsg-6) unstable; urgency=low
 
   * Bump debhelper to 9.0 to make use of hardening functions.
