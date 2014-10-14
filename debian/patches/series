@@ -1,2 +1,1 @@
-0003-Include-glib-through-glib.h-to-fix-FTBFS-with-glib-2.patch
 0004-Provide-format-strig-to-printf-in-show_sample-to.patch
