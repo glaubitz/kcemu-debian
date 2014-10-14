@@ -20,4 +20,4 @@ override_dh_auto_configure:
 		--enable-libvncserver=yes
 
 %:
-	dh $@
+	dh $@ --with autoreconf
