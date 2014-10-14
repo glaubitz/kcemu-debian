@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KCemu v0.4\n"
 "Report-Msgid-Bugs-To: Torsten.Paul@gmx.de\n"
-"POT-Creation-Date: 2010-03-07 20:51+0100\n"
-"PO-Revision-Date: 2010-03-06 00:59+0100\n"
+"POT-Creation-Date: 2010-08-24 20:54+0200\n"
+"PO-Revision-Date: 2010-08-24 20:49+0100\n"
 "Last-Translator: Torsten Paul <Torsten.Paul@gmx.de>\n"
 "Language-Team: German <Torsten.Paul@gmx.de>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,10 +121,6 @@ msgstr "Hilfe"
 #: images/keyboard.glade:27
 msgid "Keyboard"
 msgstr "Tastatur"
-
-#: images/keyboard.glade:80
-msgid "Sorry, keyboard display not configured."
-msgstr "Tastatur-Ansicht noch nicht konfiguriert."
 
 #: images/legal.glade:6
 msgid "KCemu: Licence & Warranty"
@@ -2470,7 +2467,6 @@ msgid "rom_d004_f8"
 msgstr "D004 (Schacht F8)"
 
 #: src/kc/prefs/types.cc:475
-#, fuzzy
 msgid ""
 "    Z1013 with 16k RAM and 2k ROM, running at 1MHz. This was the\n"
 "    first version with cheap circuits so the CPU was clocked at only 1MHz\n"
@@ -2756,7 +2752,6 @@ msgid "CAOS 4.2 (E)"
 msgstr "CAOS 4.2 (E)"
 
 #: src/kc/prefs/types.cc:677
-#, fuzzy
 msgid ""
 "    Unofficial successor of the KC 85/4 with 256k RAM, 64k screen memory,\n"
 "    16k system ROM with HC-CAOS 4.4, 8k BASIC ROM and 24k User ROM. It is\n"
@@ -3169,9 +3164,13 @@ msgstr "Aktualisieren"
 msgid "Close"
 msgstr "Schließen"
 
-#: src/ui/gtk/keyboard.cc:558
+#: src/ui/gtk/keyboard.cc:560
 msgid "KCemu: Keyboard"
 msgstr "KCemu: Tastatur"
+
+#: src/ui/gtk/keyboard.cc:608
+msgid "Sorry, keyboard display not configured."
+msgstr "Tastatur-Ansicht noch nicht konfiguriert."
 
 #: src/ui/gtk/module.cc:211
 msgid "No module slots available for this computer."

@@ -18,7 +18,7 @@ Description: KC 85/4 emulator
  .
  The Debian package does not contain the ROM images required to
  run the emulated machines. Please refer to the README.Debian
- file for more.
+ file for more information.
  .
  Some alternate keywords for the above:
  KC85, KC87, LC80, Z1013, A5105, Polycomputer 880

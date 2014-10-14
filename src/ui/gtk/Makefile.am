@@ -28,7 +28,7 @@ keymap_DATA = $(KEYMAPS)
 
 EXTRA_DIST = $(KEYMAPS)
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-I../../../include \
 	$(LIBTHEORA_CFLAGS) \
 	$(XVIDCORE_CFLAGS) \
@@ -37,9 +37,7 @@ INCLUDES = \
 	$(LIBAVFORMAT_CFLAGS) \
 	$(VNCSERVER_CFLAGS) \
 	$(GTK_CFLAGS) \
-	$(SDL_CFLAGS)
-
-AM_CPPFLAGS = \
+	$(SDL_CFLAGS) \
 	$(X11_CFLAGS) \
 	$(XMU_CFLAGS)
 
@@ -92,7 +90,7 @@ libui_gtk_a_SOURCES = \
 	gif.cc			\
 	hedit.cc
 
-if TARGET_LINUX
+if !TARGET_MINGW
 bin_PROGRAMS = kcemu-remote
 kcemu_remote_SOURCES = kcemu-remote.c
 kcemu_remote_LDADD = $(X11_LIBS) $(XMU_LIBS) $(INTLLIBS)
