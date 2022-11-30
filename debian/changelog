@@ -1,3 +1,15 @@
+kcemu (0.5.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add upstream changelog to debian/docs
+  * Fix file paths in debian/kcemu.manpages
+  * Drop debian/patches/0001-Fix-declaration-of-static-members-
+    in-class-Plotter.patch, fixed upstream
+  * Update debhelper version to 12 and switch to debhelper-compat
+  * Update standards version to 4.6.1 in debian/control
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Wed, 30 Nov 2022 11:53:48 +0100
+
 kcemu (0.5.1+git20141014+dfsg-2) unstable; urgency=medium
 
   * Add debian/patches/0001-Fix-declaration-of-static-members-in-
