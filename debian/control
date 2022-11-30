@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
 Build-Depends: debhelper-compat (= 13), libz80ex-dev, libsdl1.2-dev, libsndfile-dev, libvncserver-dev, libtheora-dev,
                libgtk2.0-dev, automake, autoconf, libxmu-dev, libncurses5-dev, netpbm, imagemagick, dh-autoreconf
-Standards-Version: 3.9.6
+Standards-Version: 4.6.1
 Homepage: http://kcemu.sourceforge.net/
 Vcs-Git: git://github.com/glaubitz/kcemu-debian.git
 Vcs-Browser: https://github.com/glaubitz/kcemu-debian
