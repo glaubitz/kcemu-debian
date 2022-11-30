@@ -1,8 +1,8 @@
-man/man1/kcemu.1x
-man/man1/kctape.1
-man/man1/kcemu-remote.1
-man/man1/kc2img.1
-man/man1/kc2raw.1
-man/man1/kc2tap.1
-man/man1/kc2wav.1
-man/man1/tdtodump.1
+usr/share/man/man1/kcemu.1x
+usr/share/man/man1/kctape.1
+usr/share/man/man1/kcemu-remote.1
+usr/share/man/man1/kc2img.1
+usr/share/man/man1/kc2raw.1
+usr/share/man/man1/kc2tap.1
+usr/share/man/man1/kc2wav.1
+usr/share/man/man1/tdtodump.1
