@@ -1,3 +1,14 @@
+kcemu (0.5.2+dfsg-2) unstable; urgency=medium
+
+  * Add patch to link main program and utils against libtinfo
+  * Add patch to fix invalid string buffer access (Closes: #970666)
+  * Add patch to fix missing inclusion of stdio.h (Closes: #1067141)
+  * Replace libncurses5-dev with libncurses-dev B-D in debian/control
+  * Remove useless dh-autoreconf build dependency from debian/control
+  * Run wrap-and-sort on debian directory
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Sat, 13 Apr 2024 10:40:31 +0200
+
 kcemu (0.5.2+dfsg-1) unstable; urgency=medium
 
   * New upstream release
