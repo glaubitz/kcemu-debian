@@ -1,0 +1,33 @@
+From: Mario Haustein <mario.haustein@hrz.tu-chemnitz.de>
+Date: Sat, 3 Feb 2024 12:28:39 +0100
+Subject: We need to link against -ltinfo too
+
+It should be more future-proof to rely on pkg-config.
+---
+ src/kc/Makefile.am   | 2 +-
+ src/util/Makefile.am | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/kc/Makefile.am b/src/kc/Makefile.am
+index 5a1f363..e549b41 100644
+--- a/src/kc/Makefile.am
++++ b/src/kc/Makefile.am
+@@ -198,4 +198,4 @@ kcemu_send_SOURCES = \
+ 	kcemu-send.c
+ 
+ kcemu_send_LDADD = \
+-	-lncurses $(INTLLIBS)
++	-lncurses -ltinfo $(INTLLIBS)
+diff --git a/src/util/Makefile.am b/src/util/Makefile.am
+index 9316914..22b8bff 100644
+--- a/src/util/Makefile.am
++++ b/src/util/Makefile.am
+@@ -44,7 +44,7 @@ AM_CPPFLAGS = \
+ #disp_wav_SOURCES = \
+ #	disp-wav.c
+ #disp_wav_LDADD = \
+-#	-lncurses
++#	-lncurses -ltinfo
+ 
+ disk_tool_SOURCES = \
+ 	disk-tool.c
