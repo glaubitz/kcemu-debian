@@ -1,1 +1,2 @@
 0001-We-need-to-link-against-ltinfo-too.patch
+0002-Fix-invalid-string-buffer-access.patch
